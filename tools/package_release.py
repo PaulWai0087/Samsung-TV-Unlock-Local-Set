@@ -7,6 +7,8 @@ Run from a local checkout, for example:
 
 Only Python's standard library and Git are required. The working tree is never
 packaged, no dependencies are downloaded, and no TV or helper code is executed.
+Git supplies the content; fixed ZIP metadata and uncompressed members make the
+release ZIP independent of Git and zlib compression versions.
 """
 
 import argparse
@@ -25,6 +27,8 @@ import zipfile
 
 PREFIX = "Samsung-TV-Unlock-Local-Set/"
 PACKAGE_MANIFEST = "Package-SHA256.txt"
+CANONICAL_TIMESTAMP = (2000, 1, 1, 0, 0, 0)
+CANONICAL_FILE_MODE = (stat.S_IFREG | 0o644) << 16
 SHA256_RE = re.compile(r"[0-9a-fA-F]{64}")
 NUMBER = r"(?:0|[1-9][0-9]*)"
 PRERELEASE = r"(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)"
@@ -185,6 +189,66 @@ def verify_archive(archive_path, source_ref, version):
         return guide, len(expected), helper_count, pages
 
 
+def canonicalize_archive(source_path, destination_path, source_ref):
+    """Preserve verified Git bytes with a fixed, portable ZIP layout.
+
+    Only file entries are emitted; their prefixed names represent directories.
+    All files use mode 0644, a fixed DOS timestamp, and ZIP_STORED. Filenames are
+    sorted by relative-path UTF-8 bytes. ASCII names use flags 0; other names use
+    UTF-8 flag 0x800. The seekable output needs no data-descriptor flag. No extra
+    fields, per-member comments, or ZIP64 records are used.
+    """
+    with zipfile.ZipFile(source_path) as source:
+        members = sorted(
+            (member for member in source.infolist() if not member.is_dir()),
+            key=lambda member: member.filename[len(PREFIX):].encode("utf-8"),
+        )
+        names = [member.filename for member in members]
+        with zipfile.ZipFile(
+            destination_path, "x", compression=zipfile.ZIP_STORED, allowZip64=False
+        ) as destination:
+            destination.comment = source_ref.encode("ascii")
+            for member in members:
+                entry = zipfile.ZipInfo(member.filename, date_time=CANONICAL_TIMESTAMP)
+                entry.compress_type = zipfile.ZIP_STORED
+                entry.create_system = 3
+                entry.create_version = 20
+                entry.extract_version = 20
+                entry.reserved = 0
+                entry.volume = 0
+                entry.internal_attr = 0
+                entry.external_attr = CANONICAL_FILE_MODE
+                entry.flag_bits = 0
+                entry.extra = b""
+                entry.comment = b""
+                # zipfile deterministically sets 0x800 for non-ASCII names.
+                destination.writestr(entry, source.read(member))
+
+    # Check the on-disk metadata as well, including zipfile's encoding flags.
+    with zipfile.ZipFile(destination_path) as archive:
+        if archive.namelist() != names:
+            raise ReleaseError("Canonical ZIP file order changed")
+        for entry in archive.infolist():
+            expected_flags = 0 if entry.filename.isascii() else 0x800
+            if (
+                entry.is_dir()
+                or entry.date_time != CANONICAL_TIMESTAMP
+                or entry.compress_type != zipfile.ZIP_STORED
+                or entry.compress_size != entry.file_size
+                or entry.create_system != 3
+                or entry.create_version != 20
+                or entry.extract_version != 20
+                or entry.reserved != 0
+                or entry.volume != 0
+                or entry.internal_attr != 0
+                or entry.external_attr != CANONICAL_FILE_MODE
+                or entry.flag_bits != expected_flags
+                or entry.extra != b""
+                or entry.comment != b""
+            ):
+                raise ReleaseError("Canonical ZIP metadata mismatch: " + entry.filename)
+
+
 def publish_exclusively(staged_paths, output_directory):
     # Exclusive creation also protects against another publisher winning after
     # the initial check. On failure remove only files created by this invocation.
@@ -225,8 +289,9 @@ def build_release(args):
 
     with tempfile.TemporaryDirectory(prefix=".release-stage-", dir=output) as temporary:
         stage = Path(temporary)
+        git_archive_path = stage / "source-git-archive.zip"
         archive_path = stage / names[0]
-        with archive_path.open("xb") as destination:
+        with git_archive_path.open("xb") as destination:
             result = subprocess.run(
                 ["git", "-C", repository, "archive", "--format=zip", "--prefix=" + PREFIX, args.source_ref],
                 stdout=destination, stderr=subprocess.PIPE, check=False,
@@ -234,6 +299,10 @@ def build_release(args):
         if result.returncode:
             raise ReleaseError("git archive failed: " + result.stderr.decode("utf-8", errors="replace").strip())
 
+        # Validate the Git source before rewriting only ZIP container metadata.
+        verify_archive(git_archive_path, args.source_ref, args.version)
+        canonicalize_archive(git_archive_path, archive_path, args.source_ref)
+        # The final published ZIP must pass all the original content checks too.
         guide, manifest_count, helper_count, pages = verify_archive(
             archive_path, args.source_ref, args.version
         )

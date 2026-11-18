@@ -9,8 +9,8 @@
   "assets": [
     {
       "filename": "Samsung-TV-Unlock-Local-Set-v1.0.2-Windows-x64.zip",
-      "size": 733118,
-      "sha256": "e0744d1224c4dc5327d49433b1de18b5528d96b3b707c977454a4371a1a6683a"
+      "size": 1274911,
+      "sha256": "925826d6d4981dfa9a2a52955d7456795144a05a67cc7a8cf1296843693bc6f0"
     },
     {
       "filename": "QN90B-Guide-v1.0.2.pdf",
@@ -20,7 +20,7 @@
     {
       "filename": "SHA256SUMS.txt",
       "size": 206,
-      "sha256": "0eb9c167898682aec608f5262018cb079e21d5b32f7be2b08a0c26eacc698aa4"
+      "sha256": "4f663b5726323e07e9bbce6080ff29360daa9ca0c89c7bcc664fdfa0f6cd1b93"
     }
   ]
 }

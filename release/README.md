@@ -12,7 +12,7 @@
 python tools/publish_release.py --request release/request.json --output-dir /tmp/local-set-release
 ```
 
-默认只创建并核对本地文件，不请求 GitHub 写入。输出目录应为空；脚本拒绝覆盖已有资产。打包来源是请求中的固定提交，工作区文件不会混入其中。
+默认只创建并核对本地文件，不请求 GitHub 写入。输出目录应为空；脚本拒绝覆盖已有资产。打包来源是请求中的固定提交，工作区文件不会混入其中。ZIP 采用固定文件顺序、时间、权限和无压缩存储，避免 Git 版本或压缩实现导致容器哈希变化；转换前后均核验完整文件清单。
 
 在 GitHub Actions 中传入 `--publish` 后，流程还会：
 
