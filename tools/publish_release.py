@@ -8,14 +8,13 @@ replaced, and a failed draft is kept for inspection. No TV code is executed.
 """
 
 import argparse
-import hashlib
 import json
-import os
 from pathlib import Path
 import re
 import subprocess
 import sys
 import tempfile
+import time
 
 from package_release import ReleaseError, build_release, sha256_file
 
@@ -28,8 +27,8 @@ def require(condition, message):
         raise ReleaseError(message)
 
 
-def command(arguments, optional_404=False):
-    result = subprocess.run(arguments, capture_output=True, text=True, check=False)
+def command(arguments, optional_404=False, input_text=None):
+    result = subprocess.run(arguments, input=input_text, capture_output=True, text=True, check=False)
     if result.returncode:
         if optional_404 and re.search(r"\(HTTP 404\)", result.stderr):
             return None
@@ -39,7 +38,8 @@ def command(arguments, optional_404=False):
 
 def api(path, optional_404=False):
     output = command([
-        "gh", "api", "--hostname", "github.com", "repos/" + REPOSITORY + "/" + path
+        "gh", "api", "--hostname", "github.com", "--header", "Cache-Control: no-cache",
+        "repos/" + REPOSITORY + "/" + path
     ], optional_404=optional_404)
     return None if output is None else json.loads(output)
 
@@ -51,6 +51,8 @@ def validate_request(path):
     require(re.fullmatch(r"(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)\.(?:0|[1-9][0-9]*)", request.get("version", "")), "Expected a stable version")
     require(request.get("tag") == "v" + request["version"], "Version/tag mismatch")
     require(type(request.get("validationRunId")) is int and request["validationRunId"] > 0, "Expected pinned validation run")
+    if "resumeDraftId" in request:
+        require(type(request["resumeDraftId"]) is int and request["resumeDraftId"] > 0, "Expected an explicitly reviewed draft ID")
     require(isinstance(request.get("title"), str) and request["title"].strip(), "Missing release title")
     require(request.get("notesFile") == "release/RELEASE-NOTES-" + request["tag"] + ".md", "Unexpected release notes path")
     names = {
@@ -111,27 +113,48 @@ def check_release_metadata(release, request, notes, draft):
             require(digest == "sha256:" + item["sha256"], "GitHub asset digest mismatch")
 
 
+def download_assets(release, destination):
+    for asset in release["assets"]:
+        require(type(asset.get("id")) is int and asset["id"] > 0, "Invalid asset ID")
+        with (destination / asset["name"]).open("xb") as stream:
+            result = subprocess.run([
+                "gh", "api", "--hostname", "github.com", "--header", "Accept: application/octet-stream",
+                "--header", "Cache-Control: no-cache",
+                "repos/" + REPOSITORY + "/releases/assets/" + str(asset["id"])
+            ], stdout=stream, stderr=subprocess.PIPE, check=False)
+        if result.returncode:
+            raise ReleaseError("Asset download failed: " + result.stderr.decode("utf-8", errors="replace").strip())
+
+
 def publish(request, directory, notes_path, notes):
     check_validation(request)
-    require(find_release(request["tag"]) is None, "Release already exists; refusing to overwrite it")
-    require(api("git/ref/tags/" + request["tag"], optional_404=True) is None, "Tag already exists; refusing to replace it")
-    paths = [str(directory / asset["filename"]) for asset in request["assets"]]
-    print("Creating draft release and uploading three verified assets.", flush=True)
-    command([
-        "gh", "release", "create", request["tag"], *paths,
-        "--repo", REPOSITORY, "--target", request["sourceCommit"],
-        "--title", request["title"], "--notes-file", str(notes_path), "--draft"
-    ])
-    release = find_release(request["tag"])
+    if "resumeDraftId" in request:
+        # Resume only the exact inspected draft. Never replace or re-upload its assets.
+        release = api("releases/" + str(request["resumeDraftId"]))
+        require(release.get("id") == request["resumeDraftId"], "Draft ID mismatch")
+        print("Resuming explicitly reviewed draft " + str(release["id"]) + ".", flush=True)
+    else:
+        require(find_release(request["tag"]) is None, "Release already exists; refusing to overwrite it")
+        require(api("git/ref/tags/" + request["tag"], optional_404=True) is None, "Tag already exists; refusing to replace it")
+        paths = [str(directory / asset["filename"]) for asset in request["assets"]]
+        print("Creating draft release and uploading three verified assets.", flush=True)
+        command([
+            "gh", "release", "create", request["tag"], *paths,
+            "--repo", REPOSITORY, "--target", request["sourceCommit"],
+            "--title", request["title"], "--notes-file", str(notes_path), "--draft"
+        ])
+        release = None
+        for delay in (1, 2, 4):
+            time.sleep(delay)
+            release = find_release(request["tag"])
+            if release is not None:
+                break
     check_release_metadata(release, request, notes, draft=True)
     release_id = release["id"]
     # Verification uses downloaded bytes, even when GitHub supplies a digest.
     with tempfile.TemporaryDirectory(prefix="release-download-") as temporary:
         destination = Path(temporary)
-        command([
-            "gh", "release", "download", request["tag"],
-            "--repo", REPOSITORY, "--dir", str(destination)
-        ])
+        download_assets(release, destination)
         check_assets(destination, request["assets"])
     check_release_metadata(api("releases/" + str(release_id)), request, notes, draft=True)
     # A concurrent tag creator must not silently redirect the reviewed release.
@@ -139,7 +162,11 @@ def publish(request, directory, notes_path, notes):
     if ref is not None:
         require(ref.get("object", {}).get("type") == "commit" and ref["object"]["sha"] == request["sourceCommit"], "Tag moved before publication")
     print("All uploaded bytes match. Publishing the release.", flush=True)
-    command(["gh", "release", "edit", request["tag"], "--repo", REPOSITORY, "--draft=false", "--latest"])
+    updated = json.loads(command([
+        "gh", "api", "--hostname", "github.com", "--method", "PATCH",
+        "repos/" + REPOSITORY + "/releases/" + str(release_id), "--input", "-"
+    ], input_text=json.dumps({"draft": False, "make_latest": "true"})))
+    check_release_metadata(updated, request, notes, draft=False)
     published = api("releases/" + str(release_id))
     check_release_metadata(published, request, notes, draft=False)
     ref = api("git/ref/tags/" + request["tag"])
