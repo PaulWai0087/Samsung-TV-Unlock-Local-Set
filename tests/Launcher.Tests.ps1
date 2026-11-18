@@ -22,6 +22,8 @@ foreach($function in $ast.FindAll({param($node) $node -is [Management.Automation
     . ([scriptblock]::Create($function.Extent.Text))
 }
 # Import functions only. Do not execute GUI startup, Worker, SDB, root or any TV code.
+# GUI startup normally loads this assembly; function-only fixtures must do so on Desktop.
+if($PSVersionTable.PSEdition -eq 'Desktop') { Add-Type -AssemblyName System.Drawing }
 $fixtureRoot=Join-Path ([IO.Path]::GetTempPath()) ('qn90b-gui-tests-'+[Guid]::NewGuid().ToString('N'))
 [void][IO.Directory]::CreateDirectory($fixtureRoot)
 $script:passed=0; $script:failed=0
@@ -132,7 +134,7 @@ Run-Test 'Worker argument vector survives Unicode and spaced paths' {
     $p=New-Object Diagnostics.Process;$p.StartInfo=$start
     try {
         [void]$p.Start();$out=$p.StandardOutput.ReadToEndAsync();$err=$p.StandardError.ReadToEndAsync();$p.WaitForExit()
-        $actual=@($out.GetAwaiter().GetResult()|ConvertFrom-Json)
+        $actual=$out.GetAwaiter().GetResult()|ConvertFrom-Json
         Assert-Equal 0 $p.ExitCode 'Local echo process'
         Assert-Equal $expected.Count $actual.Count 'Argument count'
         for($i=0;$i -lt $expected.Count;$i++){Assert-Equal $expected[$i] $actual[$i] ('Argument '+$i)}

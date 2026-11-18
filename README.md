@@ -61,7 +61,7 @@ Samsung Tizen TV Local Set research and tools.
 - [`tests/`](tests/)：界面、流程和依赖逻辑的离线测试。
 - [`tools/BUILDING.md`](tools/BUILDING.md)：固定 SDK 的源码构建与离线测试方法；普通用户无需编译。
 
-已有实机证据与离线测试分开记录：Stage1 已核对实机结果 JSON；Stage2 有用户成功反馈；新图形封装经过离线检查，尚不代表已在所有 Windows 环境点测。详见[验证记录](VALIDATION.txt)。
+已有实机证据与离线测试分开记录：Stage1 已核对实机结果 JSON；Stage2 有用户成功反馈；新图形封装经过离线检查，尚不代表已在所有 Windows 环境点测。详见[验证记录](VALIDATION.txt)。 Windows PowerShell 5.1 的实际自动检查结果见 [GitHub Actions](https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set/actions/workflows/offline-validation.yml)。
 
 其他设备欢迎提交[兼容性反馈](https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set/issues/new?template=compatibility.yml)或按[贡献指南](CONTRIBUTING.md)补充只读证据。新增适配需要确认真实接口、参数映射、检查条件和恢复结果。**公开 Issue / PR 不要上传个人完整日志、原值备份、设备身份信息或三星固件二进制。**
 

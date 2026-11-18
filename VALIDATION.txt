@@ -85,8 +85,8 @@ PUBLIC SOURCE EDITION
 - Managed state-machine mocks passed: Stage1 15; Stage2 16. Those projects link
   only Core.cs and VariantReader.cs, not NativeDevice.cs.
 - Portable PowerShell Worker/Launcher fixtures passed: 25 + 15, zero failures,
-  using the managed PowerShell 7.2.24 harness on Linux. Windows CI was not run
-  from this environment; no Windows or TV execution is inferred from these tests.
+  using the managed PowerShell 7.2.24 harness on Linux. These original local
+  preparation results are separate from the real Windows CI record below.
 - GitHub Actions configuration pins official actions, uses read-only repository
   permissions, builds without replacing delivered helpers, and runs offline
   fixtures. A workflow file does not prove a successful Actions run; consult
@@ -118,3 +118,17 @@ ROOT TUTORIAL ADDITION (2026-11-18)
 - Four PowerShell command blocks in ROOT-GUIDE.md parsed with zero errors.
   Parsing did not execute commands. The expanded 10-page PDF was rendered and
   visually checked; its HTML links and resources resolved.
+
+GITHUB WINDOWS CI
+- Initial published run: https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set/actions/runs/44268491948
+- Actual windows-2022 / Windows PowerShell 5.1 execution verified both delivered
+  helper manifests, compiled both production projects with 0 warnings/errors,
+  and passed all 25 Worker fixtures. The initial Launcher run passed 13/15.
+- Two fixture portability problems were identified and corrected: Windows
+  PowerShell 5.1's JSON-array pipeline behavior and the function-only fixture's
+  missing System.Drawing assembly load. All count/value assertions remain.
+- The corrected Launcher fixture also passed all 15 checks in the local Core
+  harness. Subsequent real Windows run outcomes are available in GitHub Actions:
+  https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set/actions/workflows/offline-validation.yml
+- CI exercises offline mocks and function-level logic, not a real TV connection,
+  root session, factory write, or interactive Windows GUI session.
