@@ -1,0 +1,26 @@
+{
+  "repository": "PaulWai0087/Samsung-TV-Unlock-Local-Set",
+  "version": "1.0.2",
+  "tag": "v1.0.2",
+  "sourceCommit": "101c6cfe2694f6dd669ff71104584051f0373fbe",
+  "validationRunId": 44269322894,
+  "title": "v1.0.2 — Windows 工具包与 Root 图文教程",
+  "notesFile": "release/RELEASE-NOTES-v1.0.2.md",
+  "assets": [
+    {
+      "filename": "Samsung-TV-Unlock-Local-Set-v1.0.2-Windows-x64.zip",
+      "size": 733118,
+      "sha256": "e0744d1224c4dc5327d49433b1de18b5528d96b3b707c977454a4371a1a6683a"
+    },
+    {
+      "filename": "QN90B-Guide-v1.0.2.pdf",
+      "size": 185164,
+      "sha256": "31b32fa69e7abb6bbbef6f7195a39f030ae8e2c88988655ac6fd75e1e5e49e0e"
+    },
+    {
+      "filename": "SHA256SUMS.txt",
+      "size": 206,
+      "sha256": "0eb9c167898682aec608f5262018cb079e21d5b32f7be2b08a0c26eacc698aa4"
+    }
+  ]
+}

@@ -20,7 +20,7 @@ Samsung Tizen TV Local Set research and tools.
 
 ## 下载与使用
 
-1. 在[本仓库](https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set)点击 **Code → Download ZIP**，右键选择“全部解压”。保留整个目录结构。
+1. 打开 [Releases 下载页面](https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set/releases/latest)，下载 **`Samsung-TV-Unlock-Local-Set-v1.0.2-Windows-x64.zip`**，右键选择“全部解压”。保留整个目录结构；完整源码也在包内。
 2. 双击解压目录中的 **`START.cmd`**。首次点击“检查 / 安装运行环境”时需要联网：工具从配置的官方发行来源下载固定版本组件，并核对 SHA256。无需安装完整 Tizen Studio、Python 或 Git。
 3. 按[Root 与开发者模式教程](docs/ROOT-GUIDE.md)准备电视，让电脑与电视处于同一局域网。填写电视 IP；电视上的 **Host PC IP 应填写电脑地址**。
 4. 点击 **“检测当前状态”**。检测通过且按钮可用后，按需要点击“切换新加坡”或“恢复国行参数”。
