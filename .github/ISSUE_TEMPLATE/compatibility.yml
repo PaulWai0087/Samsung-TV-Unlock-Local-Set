@@ -1,0 +1,100 @@
+name: 兼容性研究 / 新机型反馈
+description: 提交脱敏后的只读信息，申请核对其他地区、型号或固件。
+title: "[Compatibility] 型号 / 地区 / 固件"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        项目面向所有地区和型号的 Samsung Tizen TV 开展理论适配研究，目前可直接使用的配置仅为 QA75QN90BAJXXZ / 1710 / T-PTMUABC-REL-202509042046，且需核对文件指纹。
+        请先阅读 [兼容性说明](https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set/blob/HEAD/docs/COMPATIBILITY.md) 与 [贡献指南](https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set/blob/HEAD/CONTRIBUTING.md)。本表用于只读研究，不要求先尝试写入。
+        请勿附三星固件、真实 Original-Baseline.json、完整诊断包、序列号、MAC、machine-id、设备绑定 token 或账户信息。未知字段直接填写“未知”。
+  - type: input
+    id: model
+    attributes:
+      label: 完整型号代码
+      description: 填型号，不填序列号。相近系列名不足以确认兼容性。
+      placeholder: "例如 QA75QN90BAJXXZ"
+    validations:
+      required: true
+  - type: input
+    id: size_region
+    attributes:
+      label: 屏幕尺寸与原销售地区
+      placeholder: "例如 75 英寸 / 中国大陆"
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: 电视显示的固件版本
+      placeholder: "例如 1710"
+    validations:
+      required: true
+  - type: input
+    id: build_id
+    attributes:
+      label: 精确 BUILD_ID
+      description: 仅填构建标识，不粘贴整份系统文件。未取得时填写“未知”。
+      placeholder: "例如 T-PTMUABC-REL-202509042046"
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: 希望研究的目标
+      description: 例如读取当前地区、研究某个 Local Set、核对已有配置；目标不代表已支持。
+      placeholder: "例如 读取当前 Local Set / 研究新加坡目标"
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: 已知 Tizen 版本与 CPU 架构
+      placeholder: "例如 Tizen 6.5 / ARMv7；不确定则填写未知"
+  - type: dropdown
+    id: access
+    attributes:
+      label: 当前连接与权限状态
+      options:
+        - 未连接 / 未开启开发者模式
+        - SDB 已连接，未验证 root
+        - 已验证 root UID 与 EUID 为 0
+        - 其他 / 不确定（请在下方说明）
+    validations:
+      required: true
+  - type: input
+    id: root_method
+    attributes:
+      label: 已使用的连接 / root 工具及版本（如有）
+      description: 填上游名称、版本或链接，不填写认证信息。
+      placeholder: "工具名称 / 固定版本；没有则留空"
+  - type: textarea
+    id: readonly_metadata
+    attributes:
+      label: 已有的只读元数据
+      description: 只填写已经核实的只读结果；不要为了填写本表执行未知 native 调用。
+      placeholder: |
+        工厂接口路径、文件大小与 SHA256：
+        当前 Local Set 名称：
+        store / global enum（如已分清）：
+        Preventing Import 名称与当前值：
+        UID / TPID 的证据来源（如有）：
+        列表上界与可见条目摘要：
+      render: text
+  - type: textarea
+    id: observations
+    attributes:
+      label: 现象、复现步骤与必要的脱敏错误片段
+      description: 说明实际做过什么、读到了什么。成功、失败与推测分别写清；不要附完整私人日志或原值备份。
+      placeholder: "例如：仅执行检测，出现固件指纹不匹配；没有尝试写入。"
+    validations:
+      required: true
+  - type: checkboxes
+    id: evidence_scope
+    attributes:
+      label: 提交前核对
+      options:
+        - label: 我已区分理论研究范围与当前已验证配置，没有将未验证型号描述为已支持。
+          required: true
+        - label: 本次提交不包含真实设备身份、个人完整日志、原始备份或三星固件二进制。
+          required: true

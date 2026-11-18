@@ -1,0 +1,85 @@
+QN90B Region Assistant GUI: implementation review and offline validation
+
+Files reviewed
+- START.cmd
+- app/Launcher.ps1
+- tests/Launcher.Tests.ps1
+
+Implemented GUI behavior
+- Windows PowerShell 5.1 / x64 / STA WinForms launcher. START.cmd selects the
+  x64 PowerShell path, including Sysnative when needed, and quotes the script
+  path. It does not require an IDE or edit older Stage1/Stage2 packages.
+- Chinese interface with editable/saved TV IPv4, local LAN IPv4 choices,
+  Host PC IP guidance, current parameter/backup status, four primary actions,
+  progress/details and three secondary actions.
+- Main actions: setup, inspect, Singapore, China. Secondary actions: export
+  diagnostics, open guide/index.html, open the QN90B-root backup directory.
+- GUI startup reads local settings/network-adapter addresses only. It does
+  not start Worker, connect to a TV or write a factory parameter automatically.
+- Region buttons are disabled until Worker returns verified state and true
+  capability flags. Clicking an enabled action starts that action directly;
+  no second confirmation prompt is added.
+- A named mutex prevents duplicate GUI instances in the Windows session.
+  Busy state disables every Worker action and TV-IP editing/saving. The close
+  event cancels closure while busy and explains that the background operation
+  continues. There is no process Kill call.
+- Worker receives an argument vector, not a shell command. stdout and stderr
+  start ReadToEndAsync concurrently. A Windows Forms Timer polls progress and
+  process completion; no WaitForExit blocks the UI thread.
+- A progress status is never treated as final success. Only after process
+  exit does the GUI read result.json and require exit0, strict Boolean success,
+  matching action and exact expected category. TV operations also require a
+  nonnull state and mandatory strict Boolean stateVerified=true.
+- Singapore requires category SG0; China requires CHI13; Inspect accepts only
+  CHI13/CHI0/SG0. Setup and Diagnostics do not replace verified TV state.
+- Failure/partial success disables region actions until another inspection.
+  The GUI never infers eligibility solely from raw Local Set values.
+- Output is saved as Launcher-stdout.txt / Launcher-stderr.txt in the unique
+  job directory. A 15-second post-exit pipe-drain bound avoids an indefinitely
+  blocked UI if an inherited stream handle outlives the exited Worker.
+
+Issues corrected during review
+- File.Replace's optional backup path uses [NullString]::Value. PowerShell
+  can otherwise convert $null to an empty string, breaking repeated settings
+  saves. Three consecutive saves now pass the Unicode-path fixture.
+- stateVerified is mandatory Boolean true for TV results. Missing/null,
+  integer or string values cannot count as verification.
+- Chinese quotation punctuation inside PowerShell strings was normalized to
+  corner brackets so smart-quote parsing cannot terminate a string early.
+
+Actual test environment
+- Linux x86_64; .NET 6.0.428; hosted Microsoft PowerShell 7.2.24 parser/runspace.
+- Only function definitions were imported from the Launcher AST. GUI startup,
+  Windows Forms creation, Worker entry point, SDB, root, uploads and native TV
+  code were not executed. No TV connection was made.
+
+Observed checks
+- Launcher parser: 6311 tokens, zero syntax errors.
+- Fifteen targeted offline tests passed; zero failed; harness exit0;
+  SCRIPT_HAD_ERRORS=False.
+- Strict result acceptance/rejection: all three valid inspection categories,
+  expected final Singapore/China categories, nonzero exit, nonboolean success,
+  missing/nonboolean stateVerified, missing state, wrong action, unknown or
+  incorrectly cased category, missing/string capability flags, partial failure,
+  and local-only Setup/Diagnostics results.
+- Backup labels distinguish validated baselines from unavailable ones.
+- Settings were created and replaced twice using a path containing Chinese
+  characters and spaces; final normalized IP and UTF-8 JSON were verified.
+- Actual New-LauncherWorkerArguments + Quote-LauncherArgument preserved the
+  entire argument vector through a local .NET Process/Python echo round trip,
+  including Chinese characters and spaces in Worker, job and kit paths.
+- Actual Update-LauncherControls, with plain UI-object fixtures, disabled
+  parallel actions/IP editing while busy and respected capabilities when idle.
+- Actual Update-LauncherWorker timer-poll function was exercised with a local
+  Python fixture process producing 1 MiB on stdout and 1 MiB on stderr. Both
+  streams drained concurrently; completion occurred only after the child had
+  exited and both read tasks completed; both full lengths were retained.
+- START.cmd is ASCII with CRLF. Launcher.ps1 is UTF-8 with BOM and CRLF for
+  Windows PowerShell 5.1. Launcher.Tests.ps1 uses the same Chinese-safe encoding.
+
+Limits
+No claim is made that the new WinForms interface was run or visually inspected
+on Windows. DPI scaling, native rendering, installed font behavior, Windows
+Explorer integration and real GUI-to-Worker use still require Windows runtime
+validation. The tested engine stages have their separate actual TV results;
+those results are not presented as a live test of this new GUI.

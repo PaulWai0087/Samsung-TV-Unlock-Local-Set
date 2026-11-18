@@ -1,0 +1,55 @@
+Samsung TV Unlock Local Set - third-party notices
+
+The repository's MIT LICENSE applies to the original application, host scripts,
+managed helpers, tests, documentation, and original diagrams. It does not
+relicense third-party tools, their bundled dependencies, or fonts.
+No Samsung firmware binaries or device-bound backups are distributed here.
+
+1. samsung-tv-root v0.0.13
+Project: https://github.com/chris-ritsen/samsung-tv-root/tree/v0.0.13
+Release: https://github.com/chris-ritsen/samsung-tv-root/releases/tag/v0.0.13
+The upstream project uses the Unlicense. The Windows release also bundles
+Python and other runtime components with their own notices; the Unlicense
+must not be assumed to cover every bundled file.
+This repository does not distribute the upstream release ZIP. Setup downloads
+the unmodified, pinned upstream release and verifies its SHA256 and file hashes.
+Consult the upstream source and release contents for their full license terms.
+
+2. Samsung / Tizen SDB 4.2.36, Windows x64
+Source: https://download.tizen.org/sdk/tizenstudio/official/binary/sdb_4.2.36_windows-64.zip
+Setup downloads the unmodified official package and verifies its hashes.
+SDB is not included in this repository and is not covered by this project's MIT
+license. No redistribution license is inferred from public download availability.
+
+3. OpenSSL components from Git for Windows v2.56.1.windows.1
+Release: https://github.com/git-for-windows/git/releases/tag/v2.56.1.windows.1
+Archive: Git-2.56.1-64-bit.tar.bz2
+SHA256: d7d89e69855f00e73d957b513c49538a420c465c84b9d212cf1add400eecdf54
+The selected OpenSSL components use Apache License 2.0. On a PC without an
+existing usable OpenSSL, setup downloads the pinned official Git for Windows
+archive and extracts only the unmodified OpenSSL executable, libraries,
+configuration, provider, and LICENSE. It does not run the Git installer or
+post-install scripts. The selected license is retained as
+licenses/OpenSSL-LICENSE.txt in the installed component directory.
+app/OpenSSL-Provenance.json maps upstream paths to installed files.
+No Git or OpenSSL binaries are checked into this repository.
+Git for Windows includes additional components under their respective licenses;
+this project does not label the complete upstream archive Apache-2.0 or MIT.
+
+4. Guide fonts derived from Noto Sans CJK SC
+Upstream: https://github.com/notofonts/noto-cjk
+Copyright: 2014-2021 Adobe (http://www.adobe.com/)
+License: SIL Open Font License 1.1 (OFL-1.1)
+tools/guide-source/guide-sc-regular.ttf and guide-sc-bold.ttf are modified,
+subsetted/outline-converted fonts named QN90B Guide SC. Full copyright, license,
+source and modification notices are in tools/guide-source/FONT-LICENSE.txt.
+The PDF embeds these fonts. The font files are not under the project MIT license.
+
+5. Development and document-generation tools
+The pinned Microsoft .NET SDK, Python, ReportLab, fontTools, PyMuPDF, Poppler,
+and GitHub Actions are development tools; their runtimes are not shipped here.
+Their licenses remain with their respective projects. Versions and setup are
+documented in tools/BUILDING.md and tools/guide-source/README.txt.
+
+This is an independent community project. Samsung, Git for Windows, and the
+upstream root-tool author do not publish or endorse this repository.

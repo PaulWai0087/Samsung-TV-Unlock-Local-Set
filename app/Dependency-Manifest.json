@@ -1,0 +1,1419 @@
+{
+  "schema": "qn90b-dependencies-v1",
+  "packages": [
+    {
+      "id": "root",
+      "directory": "root-0.0.13",
+      "archive": "samsung-tv-root-0.0.13-windows-x86_64.zip",
+      "sha256": "c54fa0b40a1b531d9f39342fa475395759fce7040cf8968e221ef4c5d9efb4d8",
+      "bytes": 10498644,
+      "executable": "samsung-tv-root-0.0.13-windows-x86_64/samsung-tv-root.exe",
+      "url": "https://github.com/chris-ritsen/samsung-tv-root/releases/download/v0.0.13/samsung-tv-root-0.0.13-windows-x86_64.zip",
+      "files": [
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_asyncio.pyd",
+          "bytes": 74096,
+          "sha256": "c77de90cad749087a0c5dc5e19d78d24f6ef44e7e5ac19b8420cfc0cea62395d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_bz2.pyd",
+          "bytes": 86896,
+          "sha256": "65f610646d10d5babea080e060d244b546ec52c54012e5e937dc72dcc2e2e7bc"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_ctypes.pyd",
+          "bytes": 127480,
+          "sha256": "0e56107a891100535f2da79d85a5ae65ff1227b4765bd108f8593ac1a1110d81"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_decimal.pyd",
+          "bytes": 262000,
+          "sha256": "aeacfead2befcc0768063a037bb64bd32109ae09cb144e5f571b04dd7965db9d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_hashlib.pyd",
+          "bytes": 68976,
+          "sha256": "03d233dbace599168eaffec823de6ed7beec8c2a4ebfe9b8a3d8e042a59af3ba"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_lzma.pyd",
+          "bytes": 161136,
+          "sha256": "e3deecc1f59a3b811c608861decd84de1e8df8bafd5e2b39188861318c5a38cf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_multiprocessing.pyd",
+          "bytes": 37368,
+          "sha256": "2c636df7059cb0dd7e978dd735c7c5c8ddb09cf94754cf9e232296b96c5c545a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_overlapped.pyd",
+          "bytes": 57336,
+          "sha256": "662126ff80c3a1b4cedf74074029c12ae4743e6d3b37376e39ac70aacb7d4d3c"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_queue.pyd",
+          "bytes": 33784,
+          "sha256": "48e76e0ad63f6932b4a77b5819f41c1e7595636ca8d9e824f0943a14b8bb5035"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_socket.pyd",
+          "bytes": 85496,
+          "sha256": "3efa4636cf9e350856f6927d67a4c2564bf9bd2758a00bbf17d3aece5b60016d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_ssl.pyd",
+          "bytes": 179432,
+          "sha256": "0bc527d2dbc50009f43b2ed5d5982c4f63f4b647647ffa9eda612dcda80f6040"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/_wmi.pyd",
+          "bytes": 40304,
+          "sha256": "a980f1e7a29842bd946863fc2693fbeb555a9dc0f9e1630dfed9a2fcdef3ece2"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-console-l1-1-0.dll",
+          "bytes": 22072,
+          "sha256": "88ace577a9c51061cb7d1a36babbbefa48212fadc838ffde98fdfff60de18386"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-datetime-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "1bd81dfd19204b44662510d9054852fb77c9f25c1088d647881c9b976cc16818"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-debug-l1-1-0.dll",
+          "bytes": 21944,
+          "sha256": "591358eb4d1531e9563ee0813e4301c552ce364c912ce684d16576eabf195dc3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-errorhandling-l1-1-0.dll",
+          "bytes": 22096,
+          "sha256": "d56ce7b1cd76108ad6c137326ec694a14c99d48c3d7b0ace8c3ff4d9bcee3ce8"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-fibers-l1-1-0.dll",
+          "bytes": 22072,
+          "sha256": "91d249d7bc0e38ef6bcb17158b1fdc6dd8888dc086615c9b8b750b87e52a5fb3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-fibers-l1-1-1.dll",
+          "bytes": 22072,
+          "sha256": "fc9d86cec621383eab636ebc87ddd3f5c19a3cb2a33d97be112c051d0b275429"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-file-l1-1-0.dll",
+          "bytes": 26152,
+          "sha256": "1ca895aba4e7435563a6b43e85eba67a0f8c74aa6a6a94d0fc48fa35535e2585"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-file-l1-2-0.dll",
+          "bytes": 22056,
+          "sha256": "4cadbc0c39da7c6722206fdcebd670abe5b8d261e7b041dd94f9397a89d1990d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-file-l2-1-0.dll",
+          "bytes": 21960,
+          "sha256": "93c624b366ba16c643fc8933070a26f03b073ad0cf7f80173266d67536c61989"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-handle-l1-1-0.dll",
+          "bytes": 21944,
+          "sha256": "39095f59c41d76ec81bb2723d646fde4c148e7cc3402f4980d2ade95cb9c84f9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-heap-l1-1-0.dll",
+          "bytes": 22072,
+          "sha256": "8f105771b236dbcb859de271f0a6822ce1cb79c36988dd42c9e3f6f55c5f7eb9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-interlocked-l1-1-0.dll",
+          "bytes": 22072,
+          "sha256": "53b25e753ca785bf8b695d89dde5818a318890211dc992a89146f16658f0b606"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-kernel32-legacy-l1-1-1.dll",
+          "bytes": 22080,
+          "sha256": "a9b13a1cd1b8c19b0c6b4afcd5bb0dd29c0e2288231ac9e6db8510094ce68ba6"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-libraryloader-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "7f39ba298b41e4963047341288cab36b6a241835ee11ba4ad70f44dacd40906c"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-localization-l1-2-0.dll",
+          "bytes": 22080,
+          "sha256": "6ee44dd0d8510dc024c9f7c79b1b9fa88c987b26b6beb6653ddd11751c34e5dc"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-memory-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "0512a35316ec9180437f86696a84c5c06a7e4e82e050055a656e5bf9fca206f9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-namedpipe-l1-1-0.dll",
+          "bytes": 22096,
+          "sha256": "c05f1fffe3b5a2738ea54ce9485cca026fb9635f982626fba1e1dcc531897273"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-processenvironment-l1-1-0.dll",
+          "bytes": 21968,
+          "sha256": "c4eca98c3c67b6395d5b005b00ac1eb0318b86b23aa71035a44c2b1602befba9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-processthreads-l1-1-0.dll",
+          "bytes": 22096,
+          "sha256": "5ccb89e93d67bc3288d4e84649c5346e66e15e3d7cd65d989daf3f4cb584be9a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-processthreads-l1-1-1.dll",
+          "bytes": 22072,
+          "sha256": "4ad565a8ba3ef0ea8ab87221ad11f83ee0bc844ce236607958406663b407333e"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-profile-l1-1-0.dll",
+          "bytes": 22080,
+          "sha256": "7809160932f44e59b021699f5bc68799eb7293ee1fa926d6fcca3c3445302e61"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-rtlsupport-l1-1-0.dll",
+          "bytes": 21960,
+          "sha256": "9dc1e91e71c7c054854bd1487cb4e6946d82c9f463430f1c4e8d1471005172b1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-string-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "60fc31d2a0c634412f529dba76af3b9bf991352877c6dae528186d3935704cfd"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-synch-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "3a72b4f29f39a265d32ad12f0ce15dbf60129c840e10d84d427829ede45e78ad"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-synch-l1-2-0.dll",
+          "bytes": 22080,
+          "sha256": "efc1e4460984a73cf47a3def033af1c8f3b1dbc1a56cd27781d3aacf3e3330cb"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-sysinfo-l1-1-0.dll",
+          "bytes": 22072,
+          "sha256": "b203d862ddef1dd62bf623fc866c7f7a9c317c1c2ae30d1f52cb41f955b5698e"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-sysinfo-l1-2-0.dll",
+          "bytes": 22080,
+          "sha256": "2703635d835396afd0f138d7c73751afe7e33a24f4225d08c1690b0a371932c0"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-timezone-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "33f4fddc181066fce06b2227bded813f95e94ed1f3d785e982c6b6b56c510c57"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-core-util-l1-1-0.dll",
+          "bytes": 21944,
+          "sha256": "6eda016742a6171205a387a14b3c0b331841567740376f56768f8c151724207d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-conio-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "b762061b688aae679afe788904d2c9970f74a7dac98f3b42463d08f25e483d3f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-convert-l1-1-0.dll",
+          "bytes": 26056,
+          "sha256": "ebb2ae5535a64f65daeab8235585114fc9dd2cf1a49f5852d446250b998b6ae4"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-environment-l1-1-0.dll",
+          "bytes": 22080,
+          "sha256": "17d63275d00bdd8670422b95bd264c532998e0a1b041079e54fce4b6b7a55819"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-filesystem-l1-1-0.dll",
+          "bytes": 22056,
+          "sha256": "9a9e2a65a281644e368d0f272b95ba5f6b445d1c35910d06056c5ebeb77402db"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-heap-l1-1-0.dll",
+          "bytes": 22096,
+          "sha256": "bab9ac3ec83e380ae51e4295ef3bf2c738627812d3a49d1e713661abbc8dc57a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-locale-l1-1-0.dll",
+          "bytes": 22080,
+          "sha256": "bd14c67ea28e21d6257ad780a37122c9b5773f69e693f5db6bffaee4d839526e"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-math-l1-1-0.dll",
+          "bytes": 30248,
+          "sha256": "606d66d82db562ea7979179d06486a0f94d079941d26b80a1e2c49d29959df6f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-process-l1-1-0.dll",
+          "bytes": 22096,
+          "sha256": "f6156b1020380ec4f0e48577ebedaaef5fb1ab1f337d8b4e72e6a33a7567a9cc"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-runtime-l1-1-0.dll",
+          "bytes": 26152,
+          "sha256": "c5902934d026d7e15fbe9917d474f3322846a41a25e66f4b2b1f758801879f4b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-stdio-l1-1-0.dll",
+          "bytes": 26168,
+          "sha256": "a9c5a153d8c0286f9b41a2b1c65854ad9e6471b8755b7de87bae4470e60bcab6"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-string-l1-1-0.dll",
+          "bytes": 26176,
+          "sha256": "25b8f83a7767211b11132775a0e27a45aa4ec8ab4e6572599f9c172ae3606b40"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-time-l1-1-0.dll",
+          "bytes": 22096,
+          "sha256": "7c7f6393f06de11750adb09cc5698ae55cd9fb27b2e51e207286feb1b5b2b156"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/api-ms-win-crt-utility-l1-1-0.dll",
+          "bytes": 21952,
+          "sha256": "d8ba5f17b9ffcbf3aeaf3fa1da226832d2fa90f81acce0cd669464e76ce434ac"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/base_library.zip",
+          "bytes": 1333717,
+          "sha256": "ff8a2af0cd1307bbe3f16a623b415d97de333bbe38b2b7acf97b3d3ce70568c9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/libcrypto-3.dll",
+          "bytes": 5231472,
+          "sha256": "ccfffddcd3defb8d899026298af9af43bc186130f8483d77e97c93233d5f27d7"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/libffi-8.dll",
+          "bytes": 39696,
+          "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/libssl-3.dll",
+          "bytes": 794992,
+          "sha256": "007142039f04d04e0ed607bda53de095e5bc6a8a10d26ecedde94ea7d2d7eefe"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvArchiveRoot.deps.json",
+          "bytes": 430,
+          "sha256": "fc0e154d1a440bbbc23cf6997f85a3d780667f1b324f88d922cda1b2ab52557e"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvArchiveRoot.dll",
+          "bytes": 9216,
+          "sha256": "a8dc212eaf394f4d4cb4eab384f105cd292431b5e86166e5b28f9a56b6bf51b1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvArchiveRoot.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvEventAgent.deps.json",
+          "bytes": 427,
+          "sha256": "47a05be3ee543fe4de3515a795b1fa70690bafd102b500a19a18de51c0ee36c7"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvEventAgent.dll",
+          "bytes": 13824,
+          "sha256": "b6f2d48fa7ff4a5a249f92a62ed60f4ba6997679f7157a4c4e895e12728060a8"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvEventAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvRemoteInputAgent.deps.json",
+          "bytes": 445,
+          "sha256": "3fee182c8b4d4873f8fd2b1b44c1199540aa719d5506bf55dc206ff037547882"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvRemoteInputAgent.dll",
+          "bytes": 20992,
+          "sha256": "80ac363811c4e33809a83783af3f26b0e5391b424a241747c631c8a4a18a50a1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvRemoteInputAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvRootAgent.deps.json",
+          "bytes": 424,
+          "sha256": "10a5c986ec1775fc7009c5f8e8eb047072c60a3e5fd52da6b25beceeef35c1ec"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvRootAgent.dll",
+          "bytes": 18432,
+          "sha256": "d19b5cbeeeb85ee8c601a9d82006bdae0eed556d51346abe13fefaa3efa724f9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common/SamsungTvRootAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvArchiveRoot.deps.json",
+          "bytes": 430,
+          "sha256": "66c5c3188578f1f9521542475b63fa1a2a62e31c8c93bbc0e7fc8ac3102e9f03"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvArchiveRoot.dll",
+          "bytes": 8704,
+          "sha256": "8c9c6380bfa6f3c6c73b4e31306f95d8bb389f8dd3a3d72dd75030e2251f8989"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvArchiveRoot.runtimeconfig.dev.json",
+          "bytes": 153,
+          "sha256": "ada5da79a9e98b5be8b35baa4dd76d4e330fefa18e695a25b5e0aa0190832619"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvArchiveRoot.runtimeconfig.json",
+          "bytes": 249,
+          "sha256": "818abac6065c8b3de67cdb136773c1e584705913877ab1f9961d8def7fdbc16d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvRootAgent.deps.json",
+          "bytes": 424,
+          "sha256": "3961056979f36768def2a1631d1804dbd950572cee1c5229299ee26887081d68"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvRootAgent.dll",
+          "bytes": 18432,
+          "sha256": "4a54ce26524c16d4bcee4a6855e1c3a532e79d50b4e178c1bc2c9ed2a4869b0f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvRootAgent.runtimeconfig.dev.json",
+          "bytes": 153,
+          "sha256": "ada5da79a9e98b5be8b35baa4dd76d4e330fefa18e695a25b5e0aa0190832619"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/common31/SamsungTvRootAgent.runtimeconfig.json",
+          "bytes": 249,
+          "sha256": "818abac6065c8b3de67cdb136773c1e584705913877ab1f9961d8def7fdbc16d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/FdetProbe.deps.json",
+          "bytes": 397,
+          "sha256": "569cbc86914d3f3b24cce844e03ef17fc32bd2e760cf105442de578432b8f813"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/FdetProbe.dll",
+          "bytes": 49152,
+          "sha256": "0c1847fd2c48bfa26d4a084e003ed2f147149ab854a7ded4322f73524ec34d8d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/FdetProbe.runtimeconfig.json",
+          "bytes": 147,
+          "sha256": "ae259681d154aa329a88aa3f1d7b77709aed45e44eef5f850cb8762d77bd7079"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/Qn90bDisplayControl.deps.json",
+          "bytes": 427,
+          "sha256": "2de1b1914c983a5e36f77aabfad283939f5998f43310acabf800961d475be46c"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/Qn90bDisplayControl.dll",
+          "bytes": 8704,
+          "sha256": "d98664c7d1b1fb16ef88ad1e40a8ef4f856dda0970af8584fd1cb7d1f860415c"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/Qn90bDisplayControl.runtimeconfig.json",
+          "bytes": 147,
+          "sha256": "ae259681d154aa329a88aa3f1d7b77709aed45e44eef5f850cb8762d77bd7079"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/Qn90bSourceControl.deps.json",
+          "bytes": 424,
+          "sha256": "e2cafe81cd46e00ea7f18ecf974531a2d7560fdb7c75390a99f9bcc0e5102757"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/Qn90bSourceControl.dll",
+          "bytes": 7680,
+          "sha256": "5af2a621e49f4e942057213756964092fd5897d195c1860cc82c87f53749d5ac"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/Qn90bSourceControl.runtimeconfig.json",
+          "bytes": 147,
+          "sha256": "ae259681d154aa329a88aa3f1d7b77709aed45e44eef5f850cb8762d77bd7079"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/SamsungTvEventAgent.dll",
+          "bytes": 13824,
+          "sha256": "b6f2d48fa7ff4a5a249f92a62ed60f4ba6997679f7157a4c4e895e12728060a8"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/SamsungTvEventAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/SamsungTvRemoteInputAgent.dll",
+          "bytes": 20992,
+          "sha256": "80ac363811c4e33809a83783af3f26b0e5391b424a241747c631c8a4a18a50a1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/SamsungTvRemoteInputAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/SamsungTvRootAgent.dll",
+          "bytes": 18432,
+          "sha256": "d19b5cbeeeb85ee8c601a9d82006bdae0eed556d51346abe13fefaa3efa724f9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90b/SamsungTvRootAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/MaliPhysicalProbe.deps.json",
+          "bytes": 421,
+          "sha256": "f3f91068731e6c16f65c24bca4a70666f9cc7e9c76426d3aada5d02d402beac9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/MaliPhysicalProbe.dll",
+          "bytes": 69632,
+          "sha256": "da0a6c2322cadb80173001cfe0d27b4d68e544511404c1d2edd21996c323c843"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/MaliPhysicalProbe.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fDisplayControl.deps.json",
+          "bytes": 427,
+          "sha256": "abe507c4dd160f64cd52673654c3586dcedf8b905e759c56db93b2141e6429a3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fDisplayControl.dll",
+          "bytes": 9728,
+          "sha256": "4ab625641eae0f6e2497a6b32a9a0a33ef95b0de87904a61ff9cfdeea363a6b5"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fDisplayControl.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fEflTextOverlayProbe.deps.json",
+          "bytes": 442,
+          "sha256": "d2abbe34a4d013380dbb55b05bd9689287fe365587370f5b40faa27c0e31a0df"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fEflTextOverlayProbe.dll",
+          "bytes": 26112,
+          "sha256": "8a9274ada6385477e19e02943b230961af77b4b4a0233139fc674936f3a20184"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fEflTextOverlayProbe.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fScreenAnalysisDump.deps.json",
+          "bytes": 439,
+          "sha256": "5244739f0e31a0c915b0d6ddf7f9086dab7eb9577f8bf8a7eb6fea5f24fc62d9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fScreenAnalysisDump.dll",
+          "bytes": 11776,
+          "sha256": "668fca1dadf8fc960328c6cd47aecfaddd1bc934e850dd5da84ffcd5357e05f7"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fScreenAnalysisDump.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fSourceControl.deps.json",
+          "bytes": 424,
+          "sha256": "3fac01c3e2981c01dce68b1e29b2f65715a39b243a35aded34a201214d293e14"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fSourceControl.dll",
+          "bytes": 16896,
+          "sha256": "c2e975fec7034660fb4a94f6d2a32b8078945a6d764d30480efa890067a7bad5"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/Qn90fSourceControl.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/SamsungTvEventAgent.dll",
+          "bytes": 13824,
+          "sha256": "b6f2d48fa7ff4a5a249f92a62ed60f4ba6997679f7157a4c4e895e12728060a8"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/SamsungTvEventAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/SamsungTvRemoteInputAgent.dll",
+          "bytes": 20992,
+          "sha256": "80ac363811c4e33809a83783af3f26b0e5391b424a241747c631c8a4a18a50a1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/SamsungTvRemoteInputAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/SamsungTvRootAgent.dll",
+          "bytes": 18432,
+          "sha256": "d19b5cbeeeb85ee8c601a9d82006bdae0eed556d51346abe13fefaa3efa724f9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/qn90f/SamsungTvRootAgent.runtimeconfig.json",
+          "bytes": 140,
+          "sha256": "681a7f9dd3ecb637e2f1198c9cbd9d0e1b42994c211c64c8ffe2fba3f2c0442b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/swu/libswu-init-integrity-preload.so",
+          "bytes": 6024,
+          "sha256": "941c390fc2b7c4837bd1f6ad92f48a9f15b8e7962c3623dd578cef54129a6262"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/swu/libswu-init-oracle-batch-preload.so",
+          "bytes": 8080,
+          "sha256": "e6515e540be508445a9ad29eef21e936e2cbad0f1f2b0928e514e67915ec3890"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/payloads/swu/libswu-init-probe-preload.so",
+          "bytes": 7568,
+          "sha256": "de4938ae6458ef1712d5da40b50e8ae002b8e9152ce500867da9f9bf53838f25"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/pyexpat.pyd",
+          "bytes": 205304,
+          "sha256": "d615e193d1affcdbfe504e90d3621cbdcff94bf72b79d899126534507fd6d27a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/python312.dll",
+          "bytes": 6945272,
+          "sha256": "9a0e3435aaa680d868150f87ab3e388ad2eebc22f87e036155c7b4eda8cd2120"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/select.pyd",
+          "bytes": 33136,
+          "sha256": "d4d7181b11db0bd22a6cd5cda6f8583d1f5c77615fd0a6ca33350619d6e0438a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/ucrtbase.dll",
+          "bytes": 1361448,
+          "sha256": "2e5fb14b7bf8540278f3614a12f0226e56a7cc9e64b81cbd976c6fcf2f71cbfb"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/unicodedata.pyd",
+          "bytes": 1140592,
+          "sha256": "208ee1cd3cbad0828433ca7246b05be2b1ff5569983d27d296c0b38888585488"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/VCRUNTIME140.dll",
+          "bytes": 120400,
+          "sha256": "052ad6a20d375957e82aa6a3c441ea548d89be0981516ca7eb306e063d5027f4"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/_internal/VCRUNTIME140_1.dll",
+          "bytes": 49776,
+          "sha256": "6a99bc0128e0c7d6cbbf615fcc26909565e17d4ca3451b97f8987f9c6acbc6c8"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/README.md",
+          "bytes": 1268,
+          "sha256": "6897ce049803416056e076479d449be96e453396861259ad436a333a8ed4e3ec"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/research-notes/AES_EXTRACTION.md",
+          "bytes": 14499,
+          "sha256": "e63a275745b31a6b02a74d654ad7b85529be302811e918488a4df51ee65f6ab6"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/research-notes/EXPLOIT_CHAIN.md",
+          "bytes": 9794,
+          "sha256": "bcad4104b76fbfbd7eec264a3669cc96199e5134fc464acd168e3f135ea609ce"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/research-notes/QN90B_REPRODUCTION.md",
+          "bytes": 3436,
+          "sha256": "d8d7e900d8faf1763535083bdb96c8942d5c83f6b68d38700545f4ad2fd7b17a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/research-notes/QN90F_REPRODUCTION.md",
+          "bytes": 8303,
+          "sha256": "bc0d3eb130f52e0cbfdb7cb3a121c9829153c2d4076df4b9f4505539f35f23bf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/user/COMPATIBILITY.md",
+          "bytes": 16979,
+          "sha256": "db0d8bfb5dc17c1eb7d42be882eab7c138f25e0e03abdce806728c5fcb105f91"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/user/CONTROLLER.md",
+          "bytes": 8413,
+          "sha256": "1f52a3b64e3a3c5f4231280e4f52086f5602b1291e65cba2aba6d4d269890d54"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/docs/user/REMOTE_POLICY.md",
+          "bytes": 3319,
+          "sha256": "fbfc4ae52b99e19aca5dd4652fb66d5bfccf84f93cbd835329a816312636bfb7"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/LICENSE",
+          "bytes": 1233,
+          "sha256": "666f8fb5ba7f9173be0cc11354c968f9cd74b05e41a29db549ac84494512436f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/QUICKSTART.md",
+          "bytes": 8526,
+          "sha256": "6a6d1c5efe6c653a7ae4117db56dbb4b56931aec51fb1800f0168580e1bcee20"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/README.md",
+          "bytes": 7536,
+          "sha256": "d8d8ae06ee17bf0e1c0ef9f828bc4f443cb273736012526f337cef8ad0a4c07d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/samsung-tv-root.exe",
+          "bytes": 2721364,
+          "sha256": "74279264fe9d3f4bee6d16bbe472903cb46fcdfc481502ec5a5ad7871b8b4e74"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/SHA256SUMS",
+          "bytes": 28129,
+          "sha256": "f2a4d947204196082cf2e926d5c4e2822db4ea8f579ae46f113be47071ca0dbb"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/.github/workflows/build.yml",
+          "bytes": 7601,
+          "sha256": "53b9c13d74d4d299e99323ada37a06d18468570def4e3d8a7bd9b79d95a4f0d9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/.gitignore",
+          "bytes": 257,
+          "sha256": "bef427ecb836486133ff430b15d667198bf90f76886690caeb9b1b5be2de77b2"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/.python-version",
+          "bytes": 6,
+          "sha256": "8dfda54ba2f66ab3a8ebab460f4338bbeea1fb1e0f85ce06fe3530aa3c64679b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/README.md",
+          "bytes": 1268,
+          "sha256": "6897ce049803416056e076479d449be96e453396861259ad436a333a8ed4e3ec"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/research-notes/AES_EXTRACTION.md",
+          "bytes": 14499,
+          "sha256": "e63a275745b31a6b02a74d654ad7b85529be302811e918488a4df51ee65f6ab6"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/research-notes/EXPLOIT_CHAIN.md",
+          "bytes": 9794,
+          "sha256": "bcad4104b76fbfbd7eec264a3669cc96199e5134fc464acd168e3f135ea609ce"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/research-notes/QN90B_REPRODUCTION.md",
+          "bytes": 3436,
+          "sha256": "d8d7e900d8faf1763535083bdb96c8942d5c83f6b68d38700545f4ad2fd7b17a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/research-notes/QN90F_REPRODUCTION.md",
+          "bytes": 8303,
+          "sha256": "bc0d3eb130f52e0cbfdb7cb3a121c9829153c2d4076df4b9f4505539f35f23bf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/user/COMPATIBILITY.md",
+          "bytes": 16979,
+          "sha256": "db0d8bfb5dc17c1eb7d42be882eab7c138f25e0e03abdce806728c5fcb105f91"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/user/CONTROLLER.md",
+          "bytes": 8413,
+          "sha256": "1f52a3b64e3a3c5f4231280e4f52086f5602b1291e65cba2aba6d4d269890d54"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/docs/user/REMOTE_POLICY.md",
+          "bytes": 3319,
+          "sha256": "fbfc4ae52b99e19aca5dd4652fb66d5bfccf84f93cbd835329a816312636bfb7"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/LICENSE",
+          "bytes": 1233,
+          "sha256": "666f8fb5ba7f9173be0cc11354c968f9cd74b05e41a29db549ac84494512436f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/Makefile",
+          "bytes": 6618,
+          "sha256": "b957ec5505c3a1b0ee980fb7d47e98648bdbc26a3e9233f3e24f423f6ea69c5a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvArchiveRoot.cs",
+          "bytes": 5718,
+          "sha256": "aefd0886e62050ece802b8b67bc1452d2c1c251e92166caccfde1255e083f05b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvArchiveRoot.csproj",
+          "bytes": 600,
+          "sha256": "033785e5209ba4c3f3693187af13ab5547b66d930b569aee43d8902a5ae04e39"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvEventAgent.cs",
+          "bytes": 15539,
+          "sha256": "5912c2cb584a6d2fe19307bb58941ff8e53db047d81db50014c4a9e5a6fc77c9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvEventAgent.csproj",
+          "bytes": 598,
+          "sha256": "50ab70bcc89cf9068b5bec7a94869de08d6a1ea444b615104a7d8ef86e573090"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvRemoteInputAgent.cs",
+          "bytes": 32447,
+          "sha256": "38ef8675bcd938c56af2193e17a47b2076631cff1bc621b6dc82b9410b2ae4c3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvRemoteInputAgent.csproj",
+          "bytes": 610,
+          "sha256": "9e459f81ea7da861c962696776e3eee7860e3aef7b191b552376d14270ba705f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvRootAgent.cs",
+          "bytes": 28396,
+          "sha256": "6435e4a0fe320296a8a0e1c1c99eddf141bd09b96035f3e44e57d6da01ee8d36"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common/SamsungTvRootAgent.csproj",
+          "bytes": 596,
+          "sha256": "ba8da500eb09b1c49a09d64532fc27f4dcf46f78a85c58c2eee9e85425fa0d80"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common31/global.json",
+          "bytes": 86,
+          "sha256": "2cdd22a7ba4c2e15935df62eb80ab2a2f2882581aa6cabef0844a354211d81a1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common31/SamsungTvArchiveRoot.csproj",
+          "bytes": 617,
+          "sha256": "be952494db385a30300cf99507c69dfde719dcc240b1a4b32438d8e1a1482ccd"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/common31/SamsungTvRootAgent.csproj",
+          "bytes": 613,
+          "sha256": "3fbeb0405770debeb7dbbf6d675b2885f9e9aea0c0cc917da88482492c96893d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90b/FdetProbe.cs",
+          "bytes": 96734,
+          "sha256": "0267d5b5e7834aefde586c39d9fd73f5a2d1c7d710e352fd04903acc9f0f69b3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90b/FdetProbe.csproj",
+          "bytes": 578,
+          "sha256": "24abd96ba172f6613fed57f1a7dc40c8d8c1ec12a83b943a7b4041207a47395d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90b/FdetProbe.runtimeconfig.json",
+          "bytes": 156,
+          "sha256": "71008fb4e4c335a49935ad964836ceab73370ef7bac14d8e69dae6e659479bd3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90b/Qn90bDisplayControl.cs",
+          "bytes": 7809,
+          "sha256": "7137008716115df293832cfd9c20a6858be0d38355fdd8735ac9561637417333"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90b/Qn90bDisplayControl.csproj",
+          "bytes": 598,
+          "sha256": "eaab5fb4122cf8cd234180825f8ca89d6592ae023ee35fd4a67a425e38b75105"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90b/Qn90bSourceControl.cs",
+          "bytes": 5567,
+          "sha256": "425f15934c0a661fd5a7bd9be4bd45d0c095ff882cce7258f91b520bff37fa62"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90b/Qn90bSourceControl.csproj",
+          "bytes": 596,
+          "sha256": "5241d27642df05837673d939fe0c03e3e037c9e0d2dc45ebf055415000bc35be"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/CorePatternRootExploit.cs",
+          "bytes": 10998,
+          "sha256": "5f54b2e08b3e974ed3ce44a843052df68d05261b171fc8fd0e7b553a6263a30a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/EglComputeContext.cs",
+          "bytes": 24105,
+          "sha256": "79d104d2deffeb6c7350bf3ad180d5e1d54a60225365cacf7c38402277f3deef"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/MaliCommitProbe.cs",
+          "bytes": 4401,
+          "sha256": "67443329227b873968a8419e129a551041357178806c82c061def9dbaeb01c31"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/MaliNative.cs",
+          "bytes": 7860,
+          "sha256": "370191d6108415a49f7dfac8bd41d4863fd259b94ab2b8e70fb8be92f7e58adf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/MaliPageTableReclaim.cs",
+          "bytes": 55284,
+          "sha256": "669035b910b772687433b1cf35328c664cfb60279197d8fd3053215537c250b2"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/MaliPatternProbe.cs",
+          "bytes": 3155,
+          "sha256": "1a4a9f114051fbbb59cf1b4fa9a8d7a91737b2091966992d9abd1ff3b1d2cd34"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/MaliPhysicalProbe.csproj",
+          "bytes": 1013,
+          "sha256": "625ee7161833b964691b4c447418debb87086016d8c1756ff57239e8506b3acf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/MaliPhysicalProbe.runtimeconfig.json",
+          "bytes": 149,
+          "sha256": "e286669e5cdd9c2c340ce79b25aa72969fbad33360a1669bda0fd819424f8a34"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Program.cs",
+          "bytes": 11419,
+          "sha256": "a32e8170e22d173918b21ab96fce695a91ad0614caaf807b216cbaaf850f3353"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fDisplayControl.cs",
+          "bytes": 5259,
+          "sha256": "05efb0c0fca098804e4e035266b9555f334d872b66ad82cc9be043f319dcbad4"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fDisplayControl.csproj",
+          "bytes": 647,
+          "sha256": "c192fb12e3f8f5172a12cd75622aba5c40e09c778c2101e1eb2609970b4e3b7b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fDisplayNative.cs",
+          "bytes": 5830,
+          "sha256": "cb35804a24ebbfc7ba781321caafd2aead7aade736deb19c9ddac5e970d3378e"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fEflTextOverlayProbe.cs",
+          "bytes": 44469,
+          "sha256": "cf5dc5555a9a5f58c881c7abf83bdc8439d63678b03feafb9ff702c850e75042"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fEflTextOverlayProbe.csproj",
+          "bytes": 608,
+          "sha256": "f49d247764b19656205d9b15df131643eea16d87151aac2d6261cc04522d5103"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fScreenAnalysisDump.cs",
+          "bytes": 13302,
+          "sha256": "88c6af179e7617fa435602154881422c948b8fe706585622066164e84a8a9bdb"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fScreenAnalysisDump.csproj",
+          "bytes": 606,
+          "sha256": "624708bb7d92717bd471c56e7ac76c3135b946f6f177143571c0ae36f8c550b1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fSourceControl.cs",
+          "bytes": 24689,
+          "sha256": "e46c6dc57434bd72f84e23340df315dead40adfaf4c80fdb617384952ef66044"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/Qn90fSourceControl.csproj",
+          "bytes": 596,
+          "sha256": "d0c414964e344013c7367d1f8c3c143cee1ca419564ab539e0e229dc9fc23dd0"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/RootAgentLaunch.cs",
+          "bytes": 4168,
+          "sha256": "c6b842b4724acbcd06ed6bd4933548fee1e1a61ae85f38bd14e001570db876c6"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/TaskCredentialProbe.cs",
+          "bytes": 30589,
+          "sha256": "ccf11a362e2798900a0cb2834c4b2f86e61421f7c7ac18014eb576358aae8cf0"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/payloads/qn90f/UepStatusControl.cs",
+          "bytes": 2982,
+          "sha256": "79795f9be1a663d99f4d7fb2fb5cf8e4dd52486cab1560ca05ff7739490b4dd9"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/pyproject.toml",
+          "bytes": 741,
+          "sha256": "1eec82f1ea1ecad9828469df37710ea65e28dadc2ee01514d8e94994d53d073e"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/QUICKSTART.md",
+          "bytes": 8526,
+          "sha256": "6a6d1c5efe6c653a7ae4117db56dbb4b56931aec51fb1800f0168580e1bcee20"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/README.md",
+          "bytes": 7536,
+          "sha256": "d8d8ae06ee17bf0e1c0ef9f828bc4f443cb273736012526f337cef8ad0a4c07d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/__init__.py",
+          "bytes": 67,
+          "sha256": "fedde9ffd291bad78419f244e0d2adeab58be7e881df41eaf2cfdb5311e16508"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/__main__.py",
+          "bytes": 67,
+          "sha256": "87542982f474f2d3ba4df407bb248a2a04224155d522841128b131e6c561b7f3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/archive_root.py",
+          "bytes": 17695,
+          "sha256": "7053af5cedf52a21eed1c07871b82b77e769f52ecce3c402b8cd4e7942f062c4"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/capabilities.py",
+          "bytes": 13806,
+          "sha256": "489cb00569afa8979fa9283e56fd6971543fc67d7e98072456da32d0326ee6b5"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/capture.py",
+          "bytes": 6910,
+          "sha256": "955ac862ab1afb3f9337151cae691499dcbacf36e9f6e9cfdcc99655c2fc4015"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/cli.py",
+          "bytes": 41013,
+          "sha256": "61bd04cef064dbefe18c7ba8d32e24c05f0a0eb69d5b5bfe4502308db6c9048b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/compatibility.py",
+          "bytes": 11643,
+          "sha256": "e021f5cf289b263b28672bdef138bf77f8436419d13d5b2a6bdfdf6d8f569792"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/config.py",
+          "bytes": 13844,
+          "sha256": "297f1b5755a7d3d0b14b5100f37cb1ab6e2f1ec1f2104005fb2c307d3470bae2"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/control_api.py",
+          "bytes": 8942,
+          "sha256": "3cd295caa7ede79480fe230b827c9ed83b3d7397b092f715f99d7b735b6ea025"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/controller.py",
+          "bytes": 13369,
+          "sha256": "350a8c3273a6330b4e6a3d4bde9a1b38d1212967703df53f1942d5d22a2371cc"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/daemon.py",
+          "bytes": 12340,
+          "sha256": "582b2f90aea05fc2f9303f73dc4f9987e44a65f37ac56d924a4476fabaafb02b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/discovery.py",
+          "bytes": 7988,
+          "sha256": "1e5d68d72255a66267af875a73bb4c24ee7d3571d180a6c268549cc5c125ca58"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/display.py",
+          "bytes": 5982,
+          "sha256": "b3532a8f516a1598b4a77e8ceb42376e4544f17f13b7f242518a890d47ed8455"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/doctor.py",
+          "bytes": 2699,
+          "sha256": "6c750b4051fca673ab12a020a8dc87da057a581b443b974eedbd95dd1e77023d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/lifecycle.py",
+          "bytes": 15923,
+          "sha256": "de1ae35cdf69deb9a2159ee218aeb8d3e5cdd2ce331c7776dbf168c807ea7a22"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/local_dimming.py",
+          "bytes": 16993,
+          "sha256": "d996aab3d84b206f50f94a1492354eb99217915583d776b1539942f27d07d248"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/native_events.py",
+          "bytes": 24527,
+          "sha256": "0a534b16afd79e10935971b1af0c97174e74d54a3ba42c2da04ed742c5559129"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/overlay.py",
+          "bytes": 5160,
+          "sha256": "5837f63a301e44eaa0f566cf6d842dc825486567ceca1aa8746960e477bec0de"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/qn90b.py",
+          "bytes": 13629,
+          "sha256": "331c41ec1ed49741fcb68bc527cdbb37da82b6ef6f8034db2753914d0c1fe317"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/qn90f.py",
+          "bytes": 35210,
+          "sha256": "0fcc70c54bcbb3b784ed7bdca16f3cfbeb74656d2a550df723bf68effb6ab2f4"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/qn90f_shell.py",
+          "bytes": 15634,
+          "sha256": "c4238a11639c7909c45db3ec66bdf19d70ee1586e05183654fe68c0446fd0c9f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/remote.py",
+          "bytes": 25591,
+          "sha256": "5f83c8c649dfc496ee6a561c2f726c180594529b2714dc47b09919906ef42817"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/resources.py",
+          "bytes": 2713,
+          "sha256": "91f8b3be4b72a1126fb3a00316add566dca4358d22b29d8fae83d191be023baf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/root_agent.py",
+          "bytes": 25106,
+          "sha256": "e5bbd1c1a455ee2a187aee6b902c1224f432ad1777c1b156a4e78ec60754745b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/sdb.py",
+          "bytes": 17449,
+          "sha256": "d4657c0644ea017851ab7d8807aa67e795c608134b55f60d7360c1263dc7548b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/service.py",
+          "bytes": 4732,
+          "sha256": "8971928b5d3c02f71dc287a8abe7ea6c63b98694a3ed6115d3df760ad635642d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/source.py",
+          "bytes": 20382,
+          "sha256": "9a9097f069292e1cb6b30d32f246ae931c718eea71512009dda44ffade233406"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/systemd_notify.py",
+          "bytes": 911,
+          "sha256": "e601c96c9f97f850333ce6d4d3ef4e35c7745ebc1b5c6e95b82f1f84ceb4052b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/terminal.py",
+          "bytes": 6463,
+          "sha256": "c11b7a4b1cb65a231a6c3095826cf1a5c86b400d168a1fec65a95b6bbd3e664a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/src/samsung_tv_root/volume.py",
+          "bytes": 5575,
+          "sha256": "3f0c1347ef62653b64748ac6ae74849ae7c005dbea332f61633450c0927be1a2"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/__init__.py",
+          "bytes": 46,
+          "sha256": "ae5ae3998d6c8fbc94b654f28be267a4726d7a9091d7fcd8575b7c134bd1324c"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/swu_firmware_decrypt.py",
+          "bytes": 10513,
+          "sha256": "b39b6dc8d3d4d6aa9a3a83ebf20d9271fc312509e2af80b77a86cfde46d36097"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/swu_formatted_passphrase_recover.py",
+          "bytes": 13593,
+          "sha256": "3739ff564ea9b5dbcc04457807401f1e1cd9313add62b63d3118d774f06dd825"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/swu_init_integrity_preload.c",
+          "bytes": 6662,
+          "sha256": "dd79d2130fdd0139d08ed1d2410d54ee32266f23ae08065cd29cc27c26d418ea"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/swu_init_oracle_batch_preload.c",
+          "bytes": 10403,
+          "sha256": "a9deddf6da393c2e67b7e9b0556194108d051b29f5b4104e01c7de31423fcb86"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/swu_init_probe_preload.c",
+          "bytes": 9912,
+          "sha256": "8280b89558ad933356dd2b211d2239ab53d1bce5ae869551ac722491608734da"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/swu_padding_oracle.py",
+          "bytes": 17680,
+          "sha256": "c7e1e810b5d825a60d44fcc678c17aa6f14e418b1589b6779852a01bbeb394e3"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/swu_passphrase_dump.py",
+          "bytes": 6204,
+          "sha256": "6322d812b421b77dcb79e99ad35fd09461fa5c8a3d781099223d02b1b8079953"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/swu/teec.py",
+          "bytes": 15363,
+          "sha256": "bdf1eb7d82ff86242b3dc1a683ab665620ac450ebb302595b6cbd5241e65ac2d"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_archive_root_e2e.py",
+          "bytes": 7171,
+          "sha256": "7215b4c2515612f02b8acea425fd0e68c05aeeba88fabcb99f4250af71aab5ae"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_capabilities.py",
+          "bytes": 2318,
+          "sha256": "b14efdb3fa384b372e042388a0ad2be9293b02958d2b72abcf1e8a3166a75e2c"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_capture.py",
+          "bytes": 3501,
+          "sha256": "f2d096f347bb465c840d94650aa7ee941b4d5b93d4bf12e72adab0e9f9e5d5ff"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_cli.py",
+          "bytes": 16139,
+          "sha256": "a131fa16079322d129e81e965603b1363ed4882221a365fd22fe537b5a0245eb"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_compatibility.py",
+          "bytes": 6145,
+          "sha256": "d9c2520654c7d24ebe0d1e61414ef50516b970d9908f222ab73880da5eaf88dc"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_config.py",
+          "bytes": 4416,
+          "sha256": "cb73ba0536d56a2316bb9b851e6dab88987fb13f53b2c50c198d8ef2338084e1"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_control_api.py",
+          "bytes": 918,
+          "sha256": "3f52ff1cecfb430488de4cfc315d12205a3dc02b59f057ab14613500443b2e2f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_daemon.py",
+          "bytes": 1276,
+          "sha256": "02c127dcb2ca4fca13af257f7a782fef8f93892e89dfc90d95a908613a271a9f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_discovery.py",
+          "bytes": 1206,
+          "sha256": "eded11fb65f995284cde422ec96b035853feda4ea8b525c5d96f93ec56b777b2"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_display.py",
+          "bytes": 1927,
+          "sha256": "88cf7ef27c45eacceb6723e0f22fb22ec06421d0d920f43a6e804908e9ec668b"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_installation.py",
+          "bytes": 3087,
+          "sha256": "24c57fdbf1d46c9a19f00244d7607f8e19b67cb4c86c18ad2e9a9ec9baa59ca7"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_lifecycle.py",
+          "bytes": 5786,
+          "sha256": "5c99b6e80c61ce5c654106e59595934a965ac15e6c697ffbf3df787cc2c721ca"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_native_events.py",
+          "bytes": 7777,
+          "sha256": "0f6a1f4b6d3abbc7f31d7f31840cd90cc6ae8199a57656e9cbd8b8ff684cb59a"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_overlay.py",
+          "bytes": 2743,
+          "sha256": "085f2e9adcba511538d4b7a88b00421f185382211d2b5da7fcc3df77587990de"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_qn90b.py",
+          "bytes": 880,
+          "sha256": "6691cf558a95bdb65ae16464896ed204822dfd2b254b6df42c790fe67d9e3497"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_qn90f.py",
+          "bytes": 13110,
+          "sha256": "3d3943889947acd08aae090436fc70665a172b92382f68aa7f22211ec72e8fb6"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_qn90f_shell.py",
+          "bytes": 7593,
+          "sha256": "ab94b8fa109a40e4927dc7902e4674bb24702f8d60b94fd9d92909f4b348a1db"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_remote.py",
+          "bytes": 2100,
+          "sha256": "927d43855a26a80978ff04dc65c8bbeffee8f492e9732e75cd1b9366c0575cf2"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_root_agent.py",
+          "bytes": 1876,
+          "sha256": "e5fd0293eb2e9dc35006c6454df47f20d0c56e8b14906aaa220a0fa94deeac20"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_sdb.py",
+          "bytes": 6665,
+          "sha256": "d8d27dddd6138910331c27a6fe16563675b2f8ddede8f4c7f6c572ee475a3484"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_service.py",
+          "bytes": 498,
+          "sha256": "6bf5158308062fae2e6cd5df3565135d4cbea67ec3fda62f88607a4762c5f8bf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_swu.py",
+          "bytes": 1838,
+          "sha256": "d68158a66bcfdb4e56a9ce2578ec2f050472d7dd91ab3ae11ec9c0ceb4ca717f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_terminal.py",
+          "bytes": 1945,
+          "sha256": "2c87513c38f346e4f5136841757dda4e2b138e3f982589315372a27f9859acf0"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tests/test_volume.py",
+          "bytes": 2326,
+          "sha256": "06e8c4ba6ea85d8c9c0c7d87821bd5aef69c9b6c071ac2972652271a3176efbf"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tools/audit_release.py",
+          "bytes": 3389,
+          "sha256": "45a2ad18c6a1a23e3017355f31de9074a97d7fbe218c3d11ee57f6727a909093"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tools/build_release.py",
+          "bytes": 9457,
+          "sha256": "dcd234c05f028dbf55485b8cc47d6d3fac68a90f094a81a4a8bf122820971920"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tools/frozen_entry.py",
+          "bytes": 82,
+          "sha256": "14d578b97ab5465d227b0db6d09cd388516a81be9d99bbef830f8563b00f3c4f"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/tools/verify_release_assets.py",
+          "bytes": 1343,
+          "sha256": "cc777c5e2a93633300fef53d0c030e6cfb94d565c66c2e369a6bebce545490be"
+        },
+        {
+          "path": "samsung-tv-root-0.0.13-windows-x86_64/source/uv.lock",
+          "bytes": 19324,
+          "sha256": "fcd5ee6d245672f6cf398ad877586e51be0f9aa18bff707fd62aa2e1e24ba689"
+        }
+      ]
+    },
+    {
+      "id": "sdb",
+      "directory": "sdb-4.2.36",
+      "archive": "sdb_4.2.36_windows-64.zip",
+      "sha256": "829c504db12ce3e9a598a457762a030d606836cec916c45438623618fc94333c",
+      "bytes": 1899533,
+      "executable": "data/tools/sdb.exe",
+      "url": "https://download.tizen.org/sdk/tizenstudio/official/binary/sdb_4.2.36_windows-64.zip",
+      "files": [
+        {
+          "path": "changelog",
+          "bytes": 19036,
+          "sha256": "0d042c7e2c6f51569dd22e07e3d138629b7568f8625db7d1003122374a338c40"
+        },
+        {
+          "path": "data/tools/ANSI32.dll",
+          "bytes": 22016,
+          "sha256": "87a2f6a4e8bd5f0953da00579cf30a7952104f75fc4aa901efabd505c9593e3a"
+        },
+        {
+          "path": "data/tools/ansicon.exe",
+          "bytes": 15872,
+          "sha256": "890a3a8c9538555b95e1235ed969c2503023c66c7e7f400cbea41fcd19f5770e"
+        },
+        {
+          "path": "data/tools/sdb-run.bat",
+          "bytes": 258,
+          "sha256": "98ecbee60dc27630b4b6b2d6ffd675da0e621a79d978b517cf1435795223f0cd"
+        },
+        {
+          "path": "data/tools/sdb.exe",
+          "bytes": 4956936,
+          "sha256": "adeaabc381fedc9d7ba536d2f272e4ad1a24584673c2bc33ee51f70edb908169"
+        },
+        {
+          "path": "install.BAT",
+          "bytes": 10,
+          "sha256": "9f8129c857ba7b758f02c9cb2c786d589ae3590a04e69250c4c36cca1dda012e"
+        },
+        {
+          "path": "pkginfo.manifest",
+          "bytes": 223,
+          "sha256": "e86ea583661c75dbd7092038d7e924bbad5eb148d0a7d7e8b68d49b0e13765dc"
+        },
+        {
+          "path": "remove.BAT",
+          "bytes": 354,
+          "sha256": "aff0d53ad80ec3a6a3900560481f6da6cec73bf04ca74f345a1f6a7e55d4583d"
+        }
+      ]
+    },
+    {
+      "id": "openssl",
+      "directory": "openssl-git-2.56.1",
+      "archive": "openssl-git-2.56.1-windows-x64.zip",
+      "sha256": "bdefc28c2caf004005475ceff714e0c956e7696f9d45ba54d16493e944dcb847",
+      "bytes": 3087800,
+      "executable": "bin/openssl.exe",
+      "url": "",
+      "files": [
+        {
+          "path": "bin/openssl.exe",
+          "bytes": 1008796,
+          "sha256": "77a399eadd9c2eb5fd70012cd1953b86ebca8b9fda1bdf193932dc8830985874"
+        },
+        {
+          "path": "bin/libcrypto-3-x64.dll",
+          "bytes": 5399196,
+          "sha256": "f8839fd7d5b5e7b1763c88705538c5762a2f97df17f37092e37de3c663f30b1e"
+        },
+        {
+          "path": "bin/libssl-3-x64.dll",
+          "bytes": 966300,
+          "sha256": "6af55a4d522e2cc29ff0833cad4f6f7560f8ba2d107b97990d9415c590a4224a"
+        },
+        {
+          "path": "openssl.cnf",
+          "bytes": 12411,
+          "sha256": "a65a2cb9f4ee8ffdc7ef4f0ac600c0bdafb95b7b1ab457188ac610a62f5ad6b3"
+        },
+        {
+          "path": "ossl-modules/legacy.dll",
+          "bytes": 613242,
+          "sha256": "946401e9abe73c09f6ff80922f508890e2a06129e19b257064c6f0efdb381746"
+        },
+        {
+          "path": "licenses/OpenSSL-LICENSE.txt",
+          "bytes": 10175,
+          "sha256": "7d5450cb2d142651b8afa315b5f238efc805dad827d91ba367d8516bc9d49e7a"
+        },
+        {
+          "path": "SOURCE.json",
+          "bytes": 827,
+          "sha256": "11feb4a25e1d0436c80cf5fc71bcb32ab87656e8ff32d97ed09e9d361a191647"
+        }
+      ],
+      "bootstrap": {
+        "archive": "Git-2.56.1-64-bit.tar.bz2",
+        "url": "https://github.com/git-for-windows/git/releases/download/v2.56.1.windows.1/Git-2.56.1-64-bit.tar.bz2",
+        "bytes": 124091126,
+        "sha256": "d7d89e69855f00e73d957b513c49538a420c465c84b9d212cf1add400eecdf54"
+      }
+    }
+  ]
+}

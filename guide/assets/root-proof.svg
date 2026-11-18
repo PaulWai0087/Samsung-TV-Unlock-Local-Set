@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="920" height="238" preserveAspectRatio="xMinYMin meet" viewBox="0 0 920 238" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="920" height="238"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-238)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="920" height="238" rx="16" ry="16" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="24" y="199.45" style="font-family: GuideSC-Bold; font-size: 23px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,398) scale(1,-1)">手动 id 验证：外层进程退出码为 0</text>
+			<rect x="24" y="45" width="421" height="128" rx="10" ry="10" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="42" y="140.0" style="font-family: GuideSC-Bold; font-size: 20px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,280) scale(1,-1)">权限认证</text>
+			<text x="42" y="104.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,209) scale(1,-1)">authenticated: true</text>
+			<text x="42" y="68.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,137) scale(1,-1)">uid: 0   euid: 0   gid: 0   egid: 0</text>
+			<rect x="475" y="45" width="421" height="128" rx="10" ry="10" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="493" y="140.0" style="font-family: GuideSC-Bold; font-size: 20px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,280) scale(1,-1)">commands：仅 1 条 id</text>
+			<text x="493" y="105.55" style="font-family: GuideSC-Bold; font-size: 17px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,211) scale(1,-1)">exit_code: 0   timed_out: false</text>
+			<text x="493" y="68.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,137) scale(1,-1)">stdout: &quot;uid=0(owner) ...&quot;</text>
+			<text x="24" y="15.25" style="font-family: GuideSC; font-size: 15px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,30) scale(1,-1)">清理结果还要另外核对。</text>
+			<text x="775.624" y="13.8" style="font-family: GuideSC; font-size: 12px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,27) scale(1,-1)">字段示意 · 非真实日志</text>
+		</g>
+	</g>
+</svg>

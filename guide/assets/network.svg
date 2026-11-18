@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="920" height="386" preserveAspectRatio="xMinYMin meet" viewBox="0 0 920 386" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="920" height="386"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-386)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="920" height="386" rx="18" ry="18" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="22" y="165" width="280" height="195" rx="12" ry="12" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="44" y="322.3" style="font-family: GuideSC-Bold; font-size: 22px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,644) scale(1,-1)">电脑</text>
+			<rect x="44" y="270" width="217" height="31" rx="15" ry="15" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="56" y="282.25" style="font-family: GuideSC-Bold; font-size: 15px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,564) scale(1,-1)">192.168.1.10</text>
+			<text x="44" y="233.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,467) scale(1,-1)">本机局域网 IP</text>
+			<text x="44" y="204.4" style="font-family: GuideSC-Bold; font-size: 16px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,408) scale(1,-1)">填进电视的 Host PC IP</text>
+			<rect x="341" y="208" width="235" height="106" rx="12" ry="12" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(8%,15%,24%); fill-rule: evenodd;"/>
+			<text x="395.0" y="272.15" style="font-family: GuideSC-Bold; font-size: 21px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,544) scale(1,-1)">同一个路由器</text>
+			<text x="418.0" y="238.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(78%,84%,89%); stroke:none;" transform="translate(0,476) scale(1,-1)">家庭局域网</text>
+			<path d="M 305,260 L 336,260 Z" style="stroke: rgb(4%,49%,47%); stroke-linecap: butt; stroke-width: 3;"/>
+			<polygon points="336 260, 326 266, 326 254" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(4%,49%,47%); fill-rule: evenodd;"/>
+			<path d="M 581,260 L 612,260 Z" style="stroke: rgb(4%,49%,47%); stroke-linecap: butt; stroke-width: 3;"/>
+			<polygon points="612 260, 602 266, 602 254" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(4%,49%,47%); fill-rule: evenodd;"/>
+			<rect x="619" y="165" width="280" height="195" rx="12" ry="12" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="641" y="322.3" style="font-family: GuideSC-Bold; font-size: 22px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,644) scale(1,-1)">电视</text>
+			<rect x="641" y="270" width="235" height="31" rx="15" ry="15" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="653" y="282.25" style="font-family: GuideSC-Bold; font-size: 15px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,564) scale(1,-1)">192.168.1.100</text>
+			<text x="641" y="233.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,467) scale(1,-1)">电视 IP</text>
+			<text x="641" y="204.4" style="font-family: GuideSC-Bold; font-size: 16px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,408) scale(1,-1)">填进电脑助手的“电视 IP”</text>
+			<text x="23" y="133.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,267) scale(1,-1)">两个地址分开填写；图中地址只是示例，请以实际地址为准。</text>
+			<rect x="23" y="41" width="874" height="66" rx="10" ry="10" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="40" y="70.55" style="font-family: GuideSC-Bold; font-size: 17px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,141) scale(1,-1)">屏幕数字盘</text>
+			<rect x="150" y="58" width="34" height="34" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="161.395" y="67.85" style="font-family: GuideSC-Bold; font-size: 19px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,135) scale(1,-1)">1</text>
+			<rect x="193" y="58" width="34" height="34" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="204.395" y="67.85" style="font-family: GuideSC-Bold; font-size: 19px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,135) scale(1,-1)">2</text>
+			<rect x="236" y="58" width="34" height="34" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="247.395" y="67.85" style="font-family: GuideSC-Bold; font-size: 19px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,135) scale(1,-1)">3</text>
+			<rect x="279" y="58" width="34" height="34" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="290.395" y="67.85" style="font-family: GuideSC-Bold; font-size: 19px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,135) scale(1,-1)">4</text>
+			<rect x="322" y="58" width="34" height="34" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="333.395" y="67.85" style="font-family: GuideSC-Bold; font-size: 19px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,135) scale(1,-1)">5</text>
+			<path d="M 374,75 L 414,75 Z" style="stroke: rgb(4%,49%,47%); stroke-linecap: butt; stroke-width: 3;"/>
+			<polygon points="414 75, 404 81, 404 69" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(4%,49%,47%); fill-rule: evenodd;"/>
+			<text x="435" y="80.55" style="font-family: GuideSC-Bold; font-size: 17px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,161) scale(1,-1)">Developer Mode: On</text>
+			<text x="435" y="54.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,108) scale(1,-1)">Host PC IP: 192.168.1.10</text>
+			<text x="740.624" y="13.8" style="font-family: GuideSC; font-size: 12px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,27) scale(1,-1)">界面／设备示意 · 非实机截图</text>
+		</g>
+	</g>
+</svg>

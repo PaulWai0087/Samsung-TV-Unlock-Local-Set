@@ -1,0 +1,34 @@
+Seven dependency-fixture assertions passed.
+- Worker: 25 focused tests passed; 0 failures; source parser 0 errors.
+- Launcher: 15 focused tests passed; 0 failures; source parser 0 errors.
+- Tests cover state classification, same-device backups, stage ordering,
+  already-target no-op, missing backups, failed/partial writes, rollback evidence,
+  strict success flags, concurrent stdout/stderr, repeated settings save,
+  Chinese/space-containing paths, and nonfatal progress/secondary-log failure.
+- Dependency checks: 7 targeted fixture assertions passed for manifest shape,
+  Unicode archive paths, reuse, damaged-cache repair while retaining previous
+  files, bad-SHA refusal, nonfatal progress callbacks, and process quoting.
+  Expected caught failure fixtures set the minimal managed harness HadErrors
+  flag; there were no unhandled errors or failed assertions. This is not a
+  report of Windows execution.
+- Official root and SDB release archives and the official Git for Windows
+  source archive used for portable OpenSSL were SHA256-verified. Per-file
+  manifests cover all extracted components. Static PE import inspection found
+  only included OpenSSL DLLs and Windows system dependencies for the selected
+  OpenSSL executable/libraries.
+- All application PS1 files were parsed without errors. Chinese-bearing app
+  scripts use UTF-8 BOM / CRLF for Windows PowerShell 5.1.
+- Original guide validation: 8 pages rendered and visually checked; Chinese fonts embedded.
+  The current 10-page guide including Root is recorded in VALIDATION.txt.
+  Local HTML resources and links checked. Illustrations are labeled as diagrams,
+  not actual TV or Windows screenshots.
+
+VALIDATION LIMITS
+The new Windows GUI, Windows PowerShell 5.1 integration, bundled portable
+OpenSSL execution, Explorer integration, Windows DPI behavior, and new
+combined inspector were not executed on the user's PC/TV from this environment.
+Offline test runtime: Microsoft PowerShell 7.2.24 assemblies in .NET 6 on Linux.
+All TV/host mutation processes in new workflow tests were mocked; no TV was
+contacted for this packaging task. The source uses Windows PowerShell 5.1 APIs.
+The new Diagnostics command uses stock Compress-Archive; its command was not
+executed in the minimal managed harness.

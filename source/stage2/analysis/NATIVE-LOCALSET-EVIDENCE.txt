@@ -1,0 +1,261 @@
+# QN90B Stage2: exact Local Set write interface and storage semantics
+
+Analysis date: 2026-11-18. Static analysis of the user's own QN90B binaries; no target-native code was executed and no TV connection was made for this report.
+
+Publication note: paths beginning with `qn90b-evidence/`, `upload/`, or `qn90b-analysis/` identify private verification inputs or intermediate analysis. Those firmware binaries, device-bound result JSON files and intermediate dumps are not included in this public repository. The report preserves summarized findings and hashes, not device identifiers.
+
+## Conclusion for the narrow Stage2 operation
+
+For this SHA-pinned QN90B library, the appropriate single-parameter storage operation is:
+
+```c
+int result = factory_set_data(194, 3);   // Local Set raw store3 = AD_SIN2
+```
+
+The corresponding restoration of the current China value is:
+
+```c
+int result = factory_set_data(194, 43);  // Local Set raw store43 = CHI_DTV
+```
+
+The public success result is **1**. Both calls write a **raw store index**, not a global enum, a TPID, or a PnP selection ID.
+
+The Stage2 wrapper should expose only a LocalSet method accepting3 or43 and hardcode UID194 inside it. It should not expose an arbitrary UID/value setter. Preventing Import remains at the Stage1 result **0** throughout Stage2 and its LocalSet rollback.
+
+## 1. Evidence set and actual Stage1 baseline
+
+Primary target artifact:
+
+```text
+qn90b-evidence/libfactory-interface-DVBISDB.so
+267944 bytes
+SHA256 5f418d8a41fd6f307c76d013e36a1e6637496a7583c12f5bfff7baae8ac95670
+```
+
+Related target evidence:
+
+- `FactoryIndexFile_Part1.dat`: compact UID records.
+- `TIFSDaemon`: UI and PnP dispatch, analyzed separately by the daemon reviewer.
+- `libfactory-data-config.so.00.00.0057`: LocalSet/PnP configuration functions.
+- `tizen-release.txt`: `T-PTMUABC-REL-202509042046`.
+- `upload/Stage1-Result.json`: actual completed Stage1 result, read directly for this report.
+
+That Stage1 JSON has `phase=apply`, `success=true`, `changed=true`, `writeAttempted=true`, no rollback attempt, and an empty `state.readErrors` list. Its resulting `state` contains:
+
+| Field | Actual resulting value |
+|---|---|
+| Preventing Import | UID761, TPID140202, value0, default range0..13 |
+| Current LocalSet store | 43 |
+| Current LocalSet name | `CHI_DTV` |
+| Current global enum | 65 |
+| Maximum store | 54 |
+| Visible entries | 55 |
+| Visible store3 | `AD_SIN2` |
+
+**Stage1 JSON's `before` and `baseline` still contain Preventing Import13.** Stage2 must capture its own baseline from current reads / the resulting `state`, not inherit the old Stage1 rollback value13.
+
+## 2. Identifiers that must stay separate
+
+| Layer | China current state | Singapore target state |
+|---|---:|---:|
+| Factory storage UID | 194 | 194 |
+| Menu TPID | 401 | 401 |
+| Raw LocalSet store | 43 | 3 |
+| Global LocalSet enum | 65 | 25 |
+| Display name | `CHI_DTV` | `AD_SIN2` |
+
+The names and store3 visibility are now observed on this TV. The global enum mapping was established from its actual DVBETC table and daemon name table.
+
+`factory_get_data(194, &value)` and `factory_get_localset_enum(&value)` return a **global enum**. The corresponding generic setter does **not** invert that conversion. A read65 does not mean the correct restoration argument is65. Restoration is raw store43.
+
+The raw integers in the D-Bus `GetItem401` metadata tuple are not a replacement for `GetLocalSetListNo` or the global getter. The earlier metadata tuple included integer3 while the current raw store was43; those fields must not be interpreted as raw LocalSet values.
+
+## 3. Exact exported API selected
+
+The public export is at instruction address `0x454dd620`, symbol `factory_set_data`, size220 bytes:
+
+```c
+int factory_set_data(int uid, int value);
+```
+
+Managed declaration:
+
+```csharp
+[DllImport("/usr/lib/libfactory-interface-DVBISDB.so",
+    CallingConvention = CallingConvention.Cdecl)]
+static extern int factory_set_data(int uid, int value);
+```
+
+A narrow wrapper can hardcode the UID and restrict its accepted values:
+
+```csharp
+// After the existing SHA/build/device/metadata/current-state gates:
+// factory_set_data(194, 3) for Stage2 apply;
+// factory_set_data(194, 43) for Stage2 restore.
+```
+
+The helper should load by the named export, not invoke static ELF addresses. The interface is ARM32 soft-float; these arguments and the result are all 32-bit integers, so the established Stage1 P/Invoke calling convention remains appropriate.
+
+### Public return semantics
+
+At `0x454dd638..0x454dd644`, `factory_set_data` passes the UID and value to `FCStorageBaseCommon::SetFactoryUID(unsigned,int,int)`, supplying source sentinel-40. If that internal call returns0, the branch reaches `0x454dd698`, which returns public1. A nonzero internal result or invalid UID returns public0.
+
+The public result1 indicates the examined storage call reported success; the helper must still perform readback before reporting a successful LocalSet change.
+
+## 4. Proof that the supplied value is a raw store
+
+The three relevant function spans are:
+
+| Function | Instruction address |
+|---|---:|
+| `factory_set_data` | `0x454dd620` |
+| `FCStorageBaseCommon::SetFactoryUID(unsigned,int,int)` | `0x454e4204` |
+| `FCStorageBaseCommon::SetFactoryUID(unsigned,int,fac_source_info_s)` | `0x454e4070` |
+
+The first overload initializes a source-info structure and forwards the original UID and original value unchanged. `InitializeSourceInfo` at `0x454e744c` only fills the caller's structure with-40; it does not translate LocalSet or write factory parameters.
+
+The source-info overload preserves the original incoming value in r5 at `0x454e4076`. After range checks and storage-offset calculation, the decisive sequence is:
+
+```asm
+454e4180: ldr  r2, [r4, #0x18]  ; width from compact record
+454e4182: mov  r3, r5             ; ORIGINAL incoming value
+454e4184: ldr  r1, [r4, #0x1c]   ; base offset from compact record
+454e4186: ldr  r0, [r7, #0x4]    ; FCNvramMap instance
+454e4188: mla  r1, r6, r2, r1    ; base + storage-index * width
+454e418c: blx  FCNvramMap::WriteFactoryArea(unsigned,unsigned,int)
+```
+
+No global-enum-to-store conversion call occurs between input preservation and the write. The value3 is therefore stored as byte3; the value43 is stored as byte43. Supplying global25 would store raw index25, which is a different table entry.
+
+## 5. UID194 record and dynamic range
+
+The exact compact record at file offset0x660 is:
+
+```text
+(194, 0, 0, 0, 6, 2, 1, 35)
+```
+
+Fields used by the setter:
+
+| Offset | Value | Proven use |
+|---:|---:|---|
+| +0 | 194 | UID |
+| +4 | 0 | Default minimum |
+| +8 | 0 | Default maximum |
+| +0x14 | 2 | `FacStoreType_e` |
+| +0x18 | 1 | Width, one byte |
+| +0x1c | 35 / 0x23 | Factory-area-relative offset |
+
+Both3 and43 exceed the record's default maximum0. The setter does not immediately reject them. Its path `0x454e40f2..0x454e4118` invokes the current region object's `GetUpdatedItemMinMax(uid, &min, &max)` virtual method and checks those returned bounds.
+
+For UID194:
+
+1. `IFCStorageBaseRegion::GetUpdatedItemMinMax` at `0x454dcaa8` passes through to the region-specific override. UID194 does not match its unrelated special-parameter branches.
+2. The selected region object is `FCStorageRegionDVBETC`, as already established from this target's `CreateStorageConfig` and compile constants.
+3. Its override at `0x454dcd58` recognizes `r1==0xc2` and executes:
+
+```asm
+454dcd82: movs r2, #0
+454dcd84: movs r3, #0x36   ; 54
+454dcd86: str  r2, [r5]    ; min
+454dcd88: str  r3, [r6]    ; max
+454dcd8a: pop  {...,pc}
+```
+
+Therefore the effective storage range is **0..54**, and both apply3 and restore43 are valid.
+
+`factory_get_item_range(194, ...)` returns only the compact default range0..0. The Stage2 tool must not use that default range as the full LocalSet allowlist. It can validate the actual `GetLocalSetListNo` maximum54 and the observed target/original entries instead.
+
+## 6. Persistent write and footprint
+
+For type2, `FCStoreTypeControl::GetStoreTypeIndex` at `0x454f15ec` explicitly returns0. Therefore UID194's calculated address is:
+
+```text
+0x23 + 0 * 1 = factory-relative0x23
+```
+
+The value-writing `FCNvramMap::WriteFactoryArea` at `0x454f2bb8` converts width1 to a single byte. The buffer overload at `0x454f2b58` adds factory base0x3e00 and calls the object's virtual writer.
+
+`FCNvramMap::t_Write` at `0x454f20fc` opens `/dev/eeprom` and issues ioctl0x40044905 with address, byte count and buffer pointer. Consequently, the examined path writes **one byte at EEPROM absolute0x3e23**.
+
+This offset documents the persistent-storage implementation. The Stage2 program should **not** expose or use a raw EEPROM writer. Its rollback is the same public API with raw store43.
+
+## 7. Native single-item write versus PnP/UI setter
+
+There **is** a named dedicated export with different semantics:
+
+```c
+int factory_set_local_set_pnp(int pnp_id);
+```
+
+It was initially missed by searching only the unseparated spelling `localset`; the complete export search including `local_set` found it at `0x454e7748`. This report corrects the earlier preliminary statement that no dedicated LocalSet setter exists.
+
+Actual native wrapper code:
+
+- Obtains the factory-service IPC connection.
+- Passes the input unchanged to `factory_proxy_call_set_local_set_pnp_sync`.
+- That proxy serializes `(i)` and calls D-Bus method `SetLocalSetPnp`.
+
+The daemon reviewer traced `SetLocalSetPnp` at0x75ff4:
+
+1. Checks feature `com.samsung/featureconf/wizard.region_setting_page_suppport`; failure/false rejects the operation.
+2. Converts the input with `fd_config_convert_pnp_localset_id_biztv(int)`.
+3. Looks up UID194 metadata and invokes `ExecuteFactoryItem` at0x760b4.
+4. This enters the UI callback / PostExecute path with additional factory-parameter actions.
+
+Its input is an independent **PnP/BizTV selection identifier**; it must not be supplied raw store3 or global enum25 merely because those numbers identify Singapore in other layers. This PnP setter is not selected for the current single-parameter task. Likewise, the `factory_update_region` / `factory_update_region_by_country` exports are not part of this Stage2 operation.
+
+The daemon reviewer also found that the UI LocalSet callback updates other UIDs including165,180,41,190 and3007 and calls the Thailand OTA settings function. Those are actions in the UI/PnP path; the examined native `factory_set_data(194,store)` path does not directly call that callback, `ExecuteFactoryItem`, `SetParameter`, an update-region method, or a reset/reboot method.
+
+The precise static conclusion is **one direct LocalSet storage write, with no explicit multi-parameter update/reset/broadcast in this call chain**. It does not prove that other running services can never react to a changed LocalSet or that all downstream regional behavior updates immediately. Do not describe the narrow write as equivalent to applying every factory default of a Singapore TV.
+
+## 8. Readback and mapping checks
+
+Existing getters remain suitable:
+
+```c
+int factory_get_item_with_unique_id(unsigned int uid, void *caller_buffer);
+int factory_get_localset_enum(int *global_enum);
+int factory_convert_ext_localset_to_store_data(int global_enum, int *store);
+```
+
+The metadata buffer ABI remains the Stage1-established caller-allocated layout. Before the LocalSet write, require UID194 → TPID401 and the D-Bus `GetItem401` label `Local Set`, with the expected current display string.
+
+The inverse conversion API searches the same selected DVBETC table:
+
+- global25 → raw store3.
+- global65 → raw store43.
+
+It can return public1 even when an unknown enum falls back to store0, so successful return alone is insufficient. Require the known converted store and the live `GetLocalSetStr` name.
+
+No general public C export converting an arbitrary raw store to a global enum was found in the complete local/region/country export inventory. Do not invent one or construct a C++ object to call its virtual method. The current-value getter can close the mapping after each operation:
+
+| Operation state | D-Bus current store | D-Bus current name | Native current global enum | Preventing Import |
+|---|---:|---|---:|---:|
+| Before Stage2 | 43 | `CHI_DTV` | 65 | 0 |
+| Successful Stage2 apply | 3 | `AD_SIN2` | 25 | 0 |
+| Successful Stage2 restore | 43 | `CHI_DTV` | 65 | 0 |
+
+Keep the already established build/SHA/device gates before native calls and re-check the current baseline immediately before a write. On a failed or inconsistent post-write readback, restore raw store43 through `factory_set_data(194,43)` and verify the restoration tuple above.
+
+The actual Stage1 result explicitly says reboot persistence was not verified. Stage2 can likewise establish immediate API and readback success, while persistence across a later user reboot remains a separate read-only verification. The native call itself does not need to issue a reset or reboot to write the storage byte.
+
+## 9. Review artifacts
+
+Relevant instruction dumps are in `qn90b-analysis/interface-disasm/`, particularly:
+
+- `factory_set_data.txt`
+- `_ZN19FCStorageBaseCommon13SetFactoryUIDEjii.txt`
+- `_ZN19FCStorageBaseCommon13SetFactoryUIDEji17fac_source_info_s.txt`
+- `_ZN20IFCStorageBaseRegion20GetUpdatedItemMinMaxEiPiS0_.txt`
+- `_ZN21FCStorageRegionDVBETC22t_GetUpdatedItemMinMaxEiPiS0_.txt`
+- `_ZN18FCStoreTypeControl17GetStoreTypeIndexE14FacStoreType_e17fac_source_info_s.txt`
+- `_ZN10FCNvramMap16WriteFactoryAreaEjji.txt`
+- `_ZN10FCNvramMap16WriteFactoryAreaEjjPKh.txt`
+- `_ZN10FCNvramMap7t_WriteEjjPKhPi.txt`
+- `factory_get_localset_enum.txt`
+- `factory_convert_ext_localset_to_store_data.txt`
+- `factory_set_local_set_pnp.txt`
+- `factory_proxy_call_set_local_set_pnp_sync.txt`
+
+The earlier `qn90b-analysis/interface-evidence.md` contains the full metadata layout, getter return semantics, and the BOM getter write-side-effect finding. Those conclusions remain applicable.

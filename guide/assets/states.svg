@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="920" height="210" preserveAspectRatio="xMinYMin meet" viewBox="0 0 920 210" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="920" height="210"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-210)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="920" height="210" rx="16" ry="16" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<rect x="20" y="39" width="278" height="153" rx="12" ry="12" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="37" y="147" width="75" height="31" rx="15" ry="15" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="49" y="159.25" style="font-family: GuideSC-Bold; font-size: 15px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,318) scale(1,-1)">CHI13</text>
+			<text x="37" y="116.15" style="font-family: GuideSC-Bold; font-size: 21px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,232) scale(1,-1)">国行参数</text>
+			<text x="37" y="84.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,168) scale(1,-1)">Local Set: CHI_DTV</text>
+			<text x="37" y="57.25" style="font-family: GuideSC; font-size: 15px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,114) scale(1,-1)">Preventing Import: 13</text>
+			<rect x="321" y="39" width="278" height="153" rx="12" ry="12" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="338" y="147" width="75" height="31" rx="15" ry="15" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="350" y="159.25" style="font-family: GuideSC-Bold; font-size: 15px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,318) scale(1,-1)">CHI0</text>
+			<text x="338" y="116.15" style="font-family: GuideSC-Bold; font-size: 21px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,232) scale(1,-1)">地区列表已解锁</text>
+			<text x="338" y="84.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,168) scale(1,-1)">Local Set: CHI_DTV</text>
+			<text x="338" y="57.25" style="font-family: GuideSC; font-size: 15px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,114) scale(1,-1)">Preventing Import: 0</text>
+			<rect x="622" y="39" width="278" height="153" rx="12" ry="12" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<rect x="639" y="147" width="75" height="31" rx="15" ry="15" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(90%,96%,94%); fill-rule: evenodd;"/>
+			<text x="651" y="159.25" style="font-family: GuideSC-Bold; font-size: 15px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,318) scale(1,-1)">SG0</text>
+			<text x="639" y="116.15" style="font-family: GuideSC-Bold; font-size: 21px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,232) scale(1,-1)">新加坡参数</text>
+			<text x="639" y="84.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,168) scale(1,-1)">Local Set: AD_SIN2</text>
+			<text x="639" y="57.25" style="font-family: GuideSC; font-size: 15px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,114) scale(1,-1)">Preventing Import: 0</text>
+			<text x="740.624" y="13.8" style="font-family: GuideSC; font-size: 12px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,27) scale(1,-1)">界面／设备示意 · 非实机截图</text>
+		</g>
+	</g>
+</svg>

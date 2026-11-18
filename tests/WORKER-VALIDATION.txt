@@ -1,0 +1,68 @@
+QN90B Region Assistant - Worker validation
+
+Observed offline result: 25 passed, 0 failed.
+PowerShell source parsing: 0 errors.
+Validation runtime: cached Microsoft PowerShell 7.2.24 assemblies in a managed
+.NET 6 harness on Linux. The test harness imports only top-level function
+ASTs, does not run the Worker entry point, and mocks all external TV/root/host
+processes. A fixture-only Join-Path shim uses System.IO.Path.Combine because
+the minimal harness does not load the Windows filesystem module.
+
+Coverage
+- A complete, successful Stage1 read with its own zero exit code identifies
+  CHI13; a successful Stage2 read identifies SG0. Consistent successful reads
+  identify CHI0. A failed/inapplicable reader is retained without being called
+  successful. Neither-finished, outer-error and nonzero-reader cases reject.
+- Two successful readers must agree on device identity, firmware build,
+  parameter values and visible list. Wrong hashes, metadata and schema reject.
+- Combined inspector command calls only the unchanged helpers' read action;
+  independent exit codes and the at-least-one-success aggregate are preserved.
+  The command has no backslashes or carriage returns.
+- Original baseline candidates must be an actual observed original state.
+  They are saved with CreateNew; later reads retain existing bytes. Wrong-stage
+  and foreign-device originals are unavailable, not overwritten or invented.
+- Singapore branches: CHI13 -> Stage1 Apply then Stage2 Apply; CHI0 -> Stage2
+  Apply only; SG0 -> no write. Full China recovery from SG0 first verifies both
+  originals, then restores Stage2 followed by Stage1. CHI0 restores only Stage1;
+  CHI13 is a no-op. Inspect dispatches no existing host write.
+- A failed phase stops further writes without a retry or cross-stage undo.
+  Earlier successful changes and the exact failing helper rollback report stay
+  in the workflow result. Failed current states are marked unverified.
+- Nonzero host exit is rejected even if helper JSON says success. Primary
+  host reports are required and original helper state/rollback are retained.
+- Injected failures writing secondary step-result.json, steps.json and
+  progress.json do not erase actual changed/writeAttempted/state fields or
+  stop an already successful helper result from being recorded in memory.
+
+Implementation corrections verified by these fixtures
+- File.Replace backup path uses [NullString]::Value rather than PowerShell's
+  string conversion of $null (which produced an empty-path exception).
+- Progress and secondary summaries are best-effort. Primary host evidence,
+  final result and baseline writes are not treated as optional.
+- Without an actual helper result, write/changed/rollback fields are null
+  (unknown), never a fabricated assurance that no write occurred.
+
+Independent narrow review
+- Dependencies.ps1 uses the agreed Get-Qn90bTools / Install-Qn90bDependencies
+  API and callback (Percent, Message), with inherited PATH/OpenSSL settings.
+  Explicit Compression and FileSystem assembly loads address the previous
+  Windows PowerShell 5.1 ZIP type issue. Hash/size checks and staged replacement
+  preserve a previous tool directory. No new incompatibility was found.
+- Both copied stage hosts differ from the delivered originals only in TvIp,
+  strict IPv4 validation, NoExplorer and finally-written ReportPath/error
+  summaries. Native operations, phase guards and recovery order are unchanged.
+- Worker and tests are UTF-8 with BOM and CRLF for Windows PowerShell 5.1.
+- Worker owns one exclusive per-TV lock; Setup additionally owns a global
+  installation lock. Inspector holds both existing stage locks during its
+  combined reads and original-baseline capture.
+
+Scope and limits
+No television was contacted; no ARM library, root executable, SDB command,
+Windows helper host or new factory setter was executed during this validation.
+The already delivered Stage1/Stage2 native helpers and source were not changed.
+Actual Windows PowerShell 5.1 execution, WinForms integration and portable
+OpenSSL execution were not available in this environment. The new local-only
+Diagnostics packaging uses the stock Compress-Archive cmdlet; its cmdlet was
+not run in this minimal harness. The source restricts diagnostics to the
+current job, up to three recent jobs matching this TV IP, its two original
+baselines and up to two runs per stage; there is no automatic upload.

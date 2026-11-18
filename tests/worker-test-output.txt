@@ -1,0 +1,28 @@
+TOKENS=7361 ERRORS=0
+PASS Inspector recognizes CHI13 from Stage1 success and Stage2 guard failure
+PASS Inspector recognizes consistent CHI0 from two successful reads
+PASS Inspector recognizes SG0 only from successful Stage2 read
+PASS Nonzero individual read cannot become success from its JSON
+PASS Outer failure and two failed readers cannot authorize writes
+PASS Two nominally successful readers with different device identities are rejected
+PASS Fingerprint metadata and wrong schema cannot masquerade as successful reads
+PASS Inspector command is read-only with independent status capture and zero backslashes
+PASS Actual observed baseline is saved once and original bytes are retained
+PASS Foreign-device and wrong-stage baselines are unavailable
+PASS Baseline candidate must equal the actual successful read state
+PASS Singapore from CHI13 executes Stage1 Apply then Stage2 Apply
+PASS Singapore from CHI0 executes only Stage2 Apply
+PASS Singapore already SG0 and China already CHI13 perform no writes
+PASS Full China restore verifies both baselines before the first write
+PASS China from SG0 restores Stage2 first and then Stage1
+PASS China from CHI0 restores only Stage1
+PASS Stage1 Apply failure stops without Stage2 or additional write retry
+PASS Stage2 Apply failure retains successful Stage1 and original rollback report
+PASS Stage2 Restore failure stops before Import restriction is restored
+PASS Stage1 Restore failure never compensates back to Singapore
+PASS Read-only workflow never dispatches an existing host write
+PASS Nonzero host exit rejects even a successful helper marker
+PASS Failed helper state and rollback evidence are preserved exactly
+PASS Secondary summary journal and progress failures preserve actual write outcome
+TOTAL passed=25 failed=0
+SCRIPT_HAD_ERRORS=False

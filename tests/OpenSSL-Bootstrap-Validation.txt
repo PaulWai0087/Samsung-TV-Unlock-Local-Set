@@ -1,0 +1,74 @@
+OpenSSL first-run bootstrap validation
+Date: 2026-11-18
+
+Scope
+- Public app/Dependencies.ps1 fallback only. No TV connection or root/SDB/OpenSSL execution.
+- No network download during tests. Existing verified official source archive and
+  legacy OpenSSL subset ZIP were provided as local fixtures.
+- Test host: Linux, .NET 6 with System.Management.Automation 7.2.24.
+- Actual extraction used GNU tar 1.35. Windows PowerShell 5.1 and Windows bsdtar
+  were not executed here; their compatibility remains a platform verification limit.
+
+Results
+- Dependencies.ps1: 3285 tokens, 0 parser errors.
+- 9 focused tests passed, 0 failed; PowerShell SCRIPT_HAD_ERRORS=False.
+- Actual official .tar.bz2 extraction produced exactly the six selected regular files.
+- Installation produced exactly seven files, including byte-identical SOURCE.json.
+- Every staged and installed file matched the existing package byte count and SHA256.
+- Paths containing Chinese characters and spaces worked in the extraction fixture.
+- Valid existing managed installation returned without tar or download.
+- Modified source pin and damaged provenance were rejected.
+- Extractor failure and an altered member did not rename or change the old installation.
+- Forced post-install verification failure restored the previous installation.
+- The original subset ZIP still installed without tar or bootstrap.
+
+Pinned source
+Git-2.56.1-64-bit.tar.bz2
+Size: 124091126 bytes
+SHA256: d7d89e69855f00e73d957b513c49538a420c465c84b9d212cf1add400eecdf54
+URL: https://github.com/git-for-windows/git/releases/download/v2.56.1.windows.1/Git-2.56.1-64-bit.tar.bz2
+
+Exact extraction members
+ucrt64/bin/openssl.exe
+ucrt64/bin/libcrypto-3-x64.dll
+ucrt64/bin/libssl-3-x64.dll
+ucrt64/etc/ssl/openssl.cnf
+ucrt64/lib/ossl-modules/legacy.dll
+ucrt64/share/licenses/openssl/LICENSE
+
+Provenance
+app/OpenSSL-Provenance.json is copied unchanged from SOURCE.json in the original
+subset ZIP: 827 bytes, SHA256
+11feb4a25e1d0436c80cf5fc71bcb32ab87656e8ff32d97ed09e9d361a191647.
+
+Reproduction
+This optional archive-regression suite uses the original offline OpenSSL subset
+ZIP as a historical fixture. That ZIP is not distributed in the public repository.
+It is separate from the default GitHub Actions test suite.
+Use tests/OpenSSL-Bootstrap.Tests.ps1 with explicit local arguments:
+-KitRoot <checkout>
+-SourceArchive <verified Git-2.56.1-64-bit.tar.bz2>
+-LegacyArchive <verified openssl-git-2.56.1-windows-x64.zip>
+-TarExecutable <local tar executable>
+Alternatively supply QN90B_TEST_KIT, QN90B_TEST_GIT_ARCHIVE,
+QN90B_TEST_LEGACY_OPENSSL, and QN90B_TEST_TAR.
+The script imports dependency function definitions only and uses isolated temporary
+folders. It does not call Install-Qn90bDependencies, Worker, or any television tool.
+
+Platform behavior
+The production resolver uses System32/tar.exe in a 64-bit process and Sysnative
+from a 32-bit process on 64-bit Windows. It never resolves tar from PATH.
+The exact selected members are passed after --, with ProcessStartInfo argument
+quoting and concurrent stdout/stderr draining. Extraction has a 180-second timeout.
+An absent tar or a tar build unable to read bzip2 fails before replacing an existing
+installation. There is no fallback installer or post-install execution.
+
+Encoding
+Dependencies.ps1 and the test script retain UTF-8 BOM and CRLF.
+OpenSSL-Provenance.json deliberately preserves its original 827 bytes.
+
+Primary platform references
+https://learn.microsoft.com/en-us/windows/tar/
+https://www.libarchive.org/
+https://github.com/libarchive/libarchive/blob/master/tar/bsdtar.1
+https://learn.microsoft.com/en-us/windows/win32/winprog64/file-system-redirector

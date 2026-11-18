@@ -1,0 +1,6 @@
+# Preserve exact published bytes, including PowerShell BOM/CRLF and checksums.
+* -text
+*.dll binary
+*.pdf binary
+*.png binary
+*.ttf binary

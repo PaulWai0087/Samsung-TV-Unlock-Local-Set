@@ -1,0 +1,47 @@
+﻿Samsung TV Unlock Local Set — QN90B 区域助手
+==========================================
+项目面向所有地区、所有型号的 Samsung Tizen TV 开展理论适配研究。
+当前可直接使用：QA75QN90BAJXXZ / 75英寸国行 QN90B / 已核对的1710固件。
+程序还会核对内部 build 和四项固件文件指纹；其他配置需要独立适配。
+
+下载与打开
+1. GitHub 仓库点击 Code -> Download ZIP，再右键 ZIP -> 全部解压。
+2. 保留 app、engines、guide 等完整目录，双击 START.cmd。
+3. 点击“检查 / 安装运行环境”。首次需要联网下载并校验官方组件。
+4. 确认电视 IP，点击“检测当前状态”。图文中的地址仅为示例。
+5. 若显示“新加坡参数 / AD_SIN2”，保持即可，无需重复切换。
+
+首次环境准备会复用可用的 OpenSSL；缺少时下载约124 MB官方归档，
+只提取所需文件，无需安装完整Git、Tizen Studio或Python。
+需要可用的系统 tar.exe；若系统不支持解压，请更新Windows，或安装
+官方Git for Windows后再试。其他下载合计约12 MB，校验缓存可复用。
+
+第一次给符合条件的电视换区
+先按 docs/ROOT-GUIDE.md 或 guide/index.html 开启电视开发者模式。
+电脑与电视在同一局域网，电视 Host PC IP 填电脑地址。
+然后依次：检查 / 安装运行环境 -> 检测当前状态 -> 切换新加坡。
+助手检测时会自行建立临时Root会话，无需先安装永久Root。
+需要单独核对权限时，Root教程附有仅执行id的PowerShell命令。
+切换时程序会保存原始备份、执行所需阶段并回读结果。
+
+恢复
+点击“恢复国行参数”。工具会核对原机备份并按顺序恢复。
+缺少原始备份时，该功能不会启用。已有原值文件不会覆盖。
+原值备份位置：
+%LOCALAPPDATA%\QN90B-root\stage1\<电视IP>\Original-Baseline.json
+%LOCALAPPDATA%\QN90B-root\stage2\<电视IP>\Original-Baseline.json
+请保留这两个文件夹；更换电脑前先复制保存。
+
+结果与教程
+- “查看图文教程”打开离线网页 guide/index.html。
+- PDF 在 guide/QN90B-Guide.pdf，共10页（含Root流程与成功判读）。
+- “导出诊断”把日志保存到本机，不会自动上传。
+- 公开Issue只发经过脱敏的必要错误片段，不上传完整日志或原值备份。
+- 操作后正常重启电视，再次点击“检测当前状态”核对。
+
+适用范围与验证
+“理论适配所有地区、型号”不代表已验证全部设备。
+当前写入流程仅支持上述配置的新加坡目标与国行原值恢复。
+界面封装和首次环境准备流程完成离线检查，尚未完成Windows实机点测。
+详细说明见 README.md、docs/COMPATIBILITY.md 和 VALIDATION.txt。
+源码采用MIT；第三方工具和字体保留各自许可，见THIRD-PARTY-NOTICES.txt。

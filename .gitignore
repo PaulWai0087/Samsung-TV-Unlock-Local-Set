@@ -1,0 +1,40 @@
+# Build outputs and local tooling
+.build/
+**/bin/
+**/obj/
+.validation*/
+.nuget/
+.cli-home/
+__pycache__/
+*.py[cod]
+
+# Third-party archives are downloaded and verified at first setup
+cache/
+*.zip
+*.tar.bz2
+*.tar.gz
+*.7z
+*.7z.exe
+
+# Device-bound backups, private evidence, settings, and logs
+runs/
+factory-export/
+Original-Baseline.json
+baseline.json
+Stage1-Result.json
+Stage2-Result.json
+Read-Result.json
+Root-Evidence.json
+JobInfo.json
+settings.json
+*.log
+*.dmp
+production-build.log
+host-validation.txt
+
+# Editor and operating-system files
+.vs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

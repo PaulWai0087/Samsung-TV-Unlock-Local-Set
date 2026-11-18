@@ -1,0 +1,120 @@
+Samsung TV Unlock Local Set / QN90B Region Assistant 1.0.2 - validation and scope
+Build date: 2026-11-18
+
+TARGET
+QA75QN90BAJXXZ, 75-inch mainland-China QN90B.
+TV firmware label 1710; required internal build T-PTMUABC-REL-202509042046.
+Four exact factory firmware file fingerprints are checked by the unchanged
+native helper programs before a write. Windows 10/11 x64 (Intel/AMD); not ARM64.
+
+DEVICE EVIDENCE ALREADY AVAILABLE
+- Stage1: the user's actual result JSON confirms Preventing Import 13 -> 0,
+  CHI_DTV retained, and the visible Local Set list expanded from 2 to 55.
+- Stage2: the user reported the Singapore switch succeeded. No new Stage2
+  result JSON was supplied with the beginner-tool request.
+- The Stage1 and Stage2 compiled helper bytes are unchanged from those
+  previously delivered. Their three-file helper SHA256 manifests match.
+- The new state classifier was additionally exercised against the actual
+  Stage1 before/state/baseline objects: all three matched CHI13/CHI0 as expected.
+  No private device token or personal baseline is included in this tool package.
+
+NEW OFFLINE VALIDATION
+- Worker: 25 focused tests passed; 0 failures; source parser 0 errors.
+- Launcher: 15 focused tests passed; 0 failures; source parser 0 errors.
+- Tests cover state classification, same-device backups, stage ordering,
+  already-target no-op, missing backups, failed/partial writes, rollback evidence,
+  strict success flags, concurrent stdout/stderr, repeated settings save,
+  Chinese/space-containing paths, and nonfatal progress/secondary-log failure.
+- Dependency checks: 7 targeted fixture assertions passed for manifest shape,
+  Unicode archive paths, reuse, damaged-cache repair while retaining previous
+  files, bad-SHA refusal, nonfatal progress callbacks, and process quoting.
+  Expected caught failure fixtures set the minimal managed harness HadErrors
+  flag; there were no unhandled errors or failed assertions. This is not a
+  report of Windows execution.
+- Official root and SDB release archives and the official Git for Windows
+  source archive used for portable OpenSSL were SHA256-verified. Per-file
+  manifests cover all extracted components. Static PE import inspection found
+  only included OpenSSL DLLs and Windows system dependencies for the selected
+  OpenSSL executable/libraries.
+- All application PS1 files were parsed without errors. Chinese-bearing app
+  scripts use UTF-8 BOM / CRLF for Windows PowerShell 5.1.
+- Guide: 10 pages rendered and visually checked; Chinese fonts embedded.
+  Local HTML resources and links checked. Illustrations are labeled as diagrams,
+  not actual TV or Windows screenshots.
+
+VALIDATION LIMITS
+The new Windows GUI, Windows PowerShell 5.1 integration, downloaded portable
+OpenSSL execution, Explorer integration, Windows DPI behavior, and new
+combined inspector were not executed on the user's PC/TV from this environment.
+Offline test runtime: Microsoft PowerShell 7.2.24 assemblies in .NET 6 on Linux.
+All TV/host mutation processes in new workflow tests were mocked; no TV was
+contacted for this packaging task. The source uses Windows PowerShell 5.1 APIs.
+The new Diagnostics command uses stock Compress-Archive; its command was not
+executed in the minimal managed harness.
+
+BEHAVIOR
+Detection uses temporary root to run the unchanged read-only helpers and
+requires authenticated UID/EUID 0, complete returned state, expected model,
+firmware evidence and consistent per-helper results. GUI opening/Setup does
+not perform a TV parameter write. Clicking a change action rechecks current
+state before dispatching the required proven stage host(s).
+
+Singapore: CHI13 -> Stage1 Apply -> Stage2 Apply; CHI0 -> Stage2 Apply;
+SG0 -> no factory write.
+Full China recovery: SG0 -> Stage2 Restore -> Stage1 Restore;
+CHI0 -> Stage1 Restore; CHI13 -> no factory write.
+Recovery requires actual matching original backups, never inferred originals.
+Each phase reports readback and preserves any returned rollback fields.
+A failed phase stops further writes and does not undo an earlier successful
+phase automatically. Missing primary evidence is unknown, not success.
+
+The supported target is Local Set AD_SIN2. The kit does not replace firmware
+or guarantee every app/service will work. A normal reboot followed by another
+read is the way to verify the post-reboot state on the actual TV.
+
+PUBLIC SOURCE EDITION
+- Original MIT license and repository history retained, with PaulWai0087 as
+  copyright holder. Third-party license boundaries documented separately.
+- No third-party release archives, Samsung firmware binaries, real original
+  baselines, device identity values, account credentials or personal logs are
+  included in the public repository. IP addresses in examples are illustrative.
+- Six delivered helper/runtime/dependency files remain byte-identical to the
+  earlier package and match both Helper-SHA256 manifests.
+- Both production C# projects compiled successfully at the relocated layout
+  with the pinned SDK 6.0.428: 0 warnings / 0 errors for each project.
+- Managed state-machine mocks passed: Stage1 15; Stage2 16. Those projects link
+  only Core.cs and VariantReader.cs, not NativeDevice.cs.
+- Portable PowerShell Worker/Launcher fixtures passed: 25 + 15, zero failures,
+  using the managed PowerShell 7.2.24 harness on Linux. Windows CI was not run
+  from this environment; no Windows or TV execution is inferred from these tests.
+- GitHub Actions configuration pins official actions, uses read-only repository
+  permissions, builds without replacing delivered helpers, and runs offline
+  fixtures. A workflow file does not prove a successful Actions run; consult
+  the repository's actual run after publication.
+- New OpenSSL bootstrap: 9 focused offline tests passed, zero failures. Actual
+  GNU tar extraction selected exactly six upstream files; all seven installed
+  files (including provenance) matched the pinned manifests. Missing/bad
+  evidence, extraction failure, corrupt files, old-install preservation,
+  post-install rollback and original ZIP compatibility were exercised.
+  This ran on Linux and does not verify Windows bsdtar or live Windows Setup.
+- OpenSSL fallback uses the pinned Git for Windows tar.bz2 archive and built-in
+  Windows tar. Windows tar availability and bzip2 support are checked through
+  actual extraction, followed by per-file SHA256 checks. Older Windows builds
+  may require an update or an existing official Git/OpenSSL installation.
+
+Detailed test notes and test sources are in tests/; helper sources are in source/.
+Third-party versions, provenance and included licenses are listed separately.
+
+ROOT TUTORIAL ADDITION (2026-11-18)
+- docs/ROOT-GUIDE.md documents the fixed v0.0.13 command syntax and current
+  QN90B evidence. It distinguishes SDB, doctor, preflight, authenticated temporary
+  root, the id command result, cleanup and factory-parameter persistence.
+- Manual examples run only id during the temporary root session and save stdout
+  plus stderr locally. New documentation does not execute those commands.
+- system_files_unchanged in v0.0.13 covers /etc/passwd and
+  /usr/share/sdbd/public.pem; the tutorial does not describe it as a full-TV audit.
+- No production application, native helper, dependency installation or TV behavior
+  changed for this documentation addition. No new TV/root execution was performed.
+- Four PowerShell command blocks in ROOT-GUIDE.md parsed with zero errors.
+  Parsing did not execute commands. The expanded 10-page PDF was rendered and
+  visually checked; its HTML links and resources resolved.

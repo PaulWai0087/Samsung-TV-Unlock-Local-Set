@@ -1,0 +1,17 @@
+{
+  "sdk": "6.0.428",
+  "metadataSource": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/6.0/releases.json",
+  "hashAlgorithm": "SHA512",
+  "assets": [
+    {
+      "rid": "linux-x64",
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-linux-x64.tar.gz",
+      "sha512": "04395f991ab50e4755ce1ae53e23592a7420b71b82160883bae3194dd1dfd5dcaed78743e4e0b4dd51ea43c49ec84b5643630707b3854f1471265dc98490d2f9"
+    },
+    {
+      "rid": "win-x64",
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-win-x64.zip",
+      "sha512": "c027cb47b264a13e529f8c7f3ba33ac91152b56749c8681fede1d6cd48723ae1e5f04a43bac1302ee81e35a5383f3e169654e5bb7c1d331dc11cce5a95052e32"
+    }
+  ]
+}

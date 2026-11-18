@@ -1,0 +1,14 @@
+{
+  "source": "https://github.com/git-for-windows/git/releases/tag/v2.56.1.windows.1",
+  "archive": "Git-2.56.1-64-bit.tar.bz2",
+  "archiveSha256": "d7d89e69855f00e73d957b513c49538a420c465c84b9d212cf1add400eecdf54",
+  "files": {
+    "ucrt64/bin/openssl.exe": "bin/openssl.exe",
+    "ucrt64/bin/libcrypto-3-x64.dll": "bin/libcrypto-3-x64.dll",
+    "ucrt64/bin/libssl-3-x64.dll": "bin/libssl-3-x64.dll",
+    "ucrt64/etc/ssl/openssl.cnf": "openssl.cnf",
+    "ucrt64/lib/ossl-modules/legacy.dll": "ossl-modules/legacy.dll",
+    "ucrt64/share/licenses/openssl/LICENSE": "licenses/OpenSSL-LICENSE.txt"
+  },
+  "note": "Unmodified OpenSSL executable, libraries, config and license extracted from the official Git for Windows release. Only Windows system DLLs and these libraries are required by static PE imports; Windows 10/11 x64."
+}

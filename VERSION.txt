@@ -1,0 +1,7 @@
+Samsung TV Unlock Local Set
+QN90B Region Assistant 1.0.2 - public source edition with Root guide
+Prepared: 2026-11-18
+Repository: https://github.com/PaulWai0087/Samsung-TV-Unlock-Local-Set
+Direct-use profile: QA75QN90BAJXXZ / T-PTMUABC-REL-202509042046
+Native helpers: unchanged from the previously delivered Stage1/Stage2 package
+Third-party runtime packages: official pinned downloads at first setup

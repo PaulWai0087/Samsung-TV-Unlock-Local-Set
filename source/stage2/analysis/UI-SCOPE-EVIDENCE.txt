@@ -1,0 +1,86 @@
+# QN90B stage 2: Local Set UI path versus one-UID native write
+
+## Actual stage-1 result
+
+The uploaded `upload/Stage1-Result.json` was independently checked. It reports `phase=apply`, `success=true`, `writeAttempted=true`, `changed=true`, and `setter rc=1`. Preventing Import changed from 13 to 0 while Local Set remained raw store43 / global enum65 / `CHI_DTV`. The visible list changed from 2 entries (stores0 and43) to **55 entries covering every raw store0..54 exactly once**. Store3 is **`AD_SIN2`**. `readErrors` is empty. `rollbackAttempted=false`; `rollbackSucceeded=false` means no rollback was attempted, not that a rollback failed. Reboot persistence was not tested by this result.
+
+## Conclusion for stage 2
+
+The actual daemon's normal UI Local Set path performs several additional setting changes and notifications. It is **not equivalent** to the native `factory_set_data(194, rawStore)` storage operation. A stage-2 tool scoped to changing only the Local Set parameter should use the independently verified native one-UID path and should describe its result as changing Local Set identification. It must not claim that the operation reproduces all of the UI's regional defaults or converts the television into another regional product.
+
+The examined native storage path does not directly call the daemon callbacks described below. This is a statement about the inspected code; it cannot exclude reactions in other processes or a driver that observes a stored value changing.
+
+All analysis here was static, using the user's exported `TIFSDaemon` (SHA-256 `550d7260e6f2f6e0d41d83d95f51a15cfd90b4f839609ffcad67b5e1d29320db`) and corroborating interface/config binaries. No TV connection or native TV code execution was performed. Addresses are ELF virtual addresses with the Thumb low bit cleared.
+
+## 1. Entry and dispatch in the daemon
+
+`FCControl::SetParameter(FacItemNode_s*, int)`, **0x765c8**, reads the item's UID at **0x765e4** and compares it with 194 at **0x765ea**. UID194 enters a Local Set map translation branch at **0x76628**. After that it updates the item range and dispatches through the execution object's vtable to `ExecuteFactoryItem`.
+
+`FCControlItemExecution::ExecuteFactoryItem`, **0x4d81c**, looks up a per-UID callback. Its initialized callback-table entry at **0x8da74** is `{194, 0x4bccd, 0}`, identifying the Thumb `t_ExecuteLocalSet` callback. After a successful callback, the generic machinery can save the item through `FCStorageBaseCommon::SetFactoryUniqueItemData` (call at **0x4da52**, PLT0x2e518), and it calls the virtual `PostExecute` handler at **0x4d90e**. The relevant vtable entry at **0x82b84** resolves to `PostExecute`, **0x4d308**.
+
+The host/UI's visible-list position, a raw Local Set store, and the native global enum are therefore distinct numbering domains. A general UI SetParameter call is not a safe substitute for the already verified raw-store native setter.
+
+## 2. Direct Local Set callback performs additional parameter changes
+
+`FCControlItemExecution::t_ExecuteLocalSet(int, int&)`, **0x4bccc**, length440:
+
+1. Converts the incoming Local Set raw store using UID194's `ConvertStoreDataToControlData` at **0x4bcf2**.
+2. Calls the Preventing Import filter at **0x4bd2a**. The callback rejects entries blocked by that filter.
+3. Reads four dependent UIDs from the table at **0x8c26c**: **165, 180, 41, 190**.
+4. Calls `FCControl::SetParameter` for these items inside the loop **0x4bd90–0x4bdce**.
+5. Calls `m_ThailandOTASupportSetttings` at **0x4bdd2**.
+6. Directly writes **UID3007 = 1** via `SetFactoryUID` at **0x4bde2**.
+
+The raw four-column default row is selected by the converted global Local Set enum:
+
+| Global enum / region label | Row address | Four raw default values for UIDs165/180/41/190 |
+|---|---|---|
+| 25 / `AD_SIN2` | 0x8c40c | 9, 21, 17, 0 |
+| 65 / `CHI_DTV` | 0x8c68c | 5, 15, 27, 1 |
+
+These values are **evidence of UI behavior, not a proposed write list**. In particular, the callback replaces UID165's table value with a dynamic getter result at **0x4bdb4–0x4bdbe**. For the other three items it converts the row value with `ConvertControlDataToStoreData` at **0x4be06** before dispatching SetParameter. Blindly copying the row would not reproduce the callback correctly.
+
+UID165 is dispatched to the virtual `t_ExecuteRegion` handler; UID180 is associated with `t_ExecuteArabicLanguage`. UID41's post-processing calls `m_SetDefaultLanguage`. No unsupported menu label is inferred for UID190 or UID3007 in this report.
+
+`m_ThailandOTASupportSetttings`, **0x48090**, checks UID41. If its control value equals44, it writes **UID398 = 1** at **0x480e0**. This is another conditional UI-side change, not part of the single-UID native write.
+
+## 3. PostExecute changes country, configuration and dependent items
+
+`FCControlItemExecution::PostExecute`, **0x4d308**, length284, recognizes UID194 at **0x4d324**. Its UID194 path contains:
+
+| Call site | Resolved target / effect visible in this binary |
+|---|---|
+| 0x4d364 | `FCStorageBase::SetExtraRequiredItems()` |
+| 0x4d368 | Imported `FCTuner::Update()` |
+| 0x4d380 | `FCLocale::SetDefaultCountry()` |
+| 0x4d384 | Imported **`fconfig_db_reset()`** |
+| 0x4d38e | `m_UpdateSrcInfoToFactoryData()` |
+| 0x4d344 | `m_UpdateDataByReferingFMS()` |
+
+For UID165's post-processing, **0x4d374** also calls imported `secvideo_api_localset_changed`.
+
+`SetExtraRequiredItems`, **0x56f30**, obtains **17 UID/value pairs** using `fd_config_get_setting_data`, reads the current values, and calls `SetFactoryUID` for pairs that differ. It is not merely a display refresh.
+
+`FCLocale::SetDefaultCountry`, **0x7a144**, reads system-info values511 and512 and makes two `vconf_set_int` calls at **0x7a1cc** and **0x7a1ec**. Their literal keys are respectively **`db/system/country`** (string0x9b584) and **`db/system/analog_country`** (string0x9b5bc).
+
+`m_UpdateDataByReferingFMS`, **0x4ab44**, additionally computes a PEQ index through `fd_config_get_peq_inx` and writes UID843 at **0x4abd6**. The source-info and feature-configuration operations can therefore affect more than UID194.
+
+### What can and cannot be said about resets
+
+The Local Set path **does call `fconfig_db_reset`**. The import is resolved by this ELF's PLT/GOT relocation; the daemon's own error string at0x8bdd8 also names that function. However, the implementation of this imported function is not included in the four exported files. Its name alone does **not** establish a whole-TV factory reset, Device Preset, app-data reset, or Smart Hub reset.
+
+The inspected Local Set callback and its examined post-processing do not call the daemon's separate `t_ExecuteFactoryReset` entry, **0x4c73c**, or the imported `SWU::SWUFactorySettings::swuFactoryReset` directly. The separate factory-reset handler invokes the reset machinery and file flags on its own path. This supports distinguishing those explicit reset operations from Local Set selection, but is not a proof that all external libraries and processes have no further effects.
+
+No Device Preset or Smart Hub reset operation should be added to stage2 based on this analysis. The user's chosen stage2 scope is a direct Local Set parameter change, without reproducing UI configuration refreshes or resets.
+
+## 4. The PnP API is another UI/configuration path
+
+The interface library also exports a `factory_set_local_set_pnp` D-Bus wrapper. The daemon implementation `FCControl::SetLocalSetPnp(int)`, **0x75ff4**, first requires the feature flag **`com.samsung/featureconf/wizard.region_setting_page_suppport`**. If unavailable or false, the function rejects the operation.
+
+At **0x76094** it passes the supplied input through **`fd_config_convert_pnp_localset_id_biztv(int)`** (PLT0x2e86c). At **0x760b4** it dispatches UID194 through `ExecuteFactoryItem`, with the callback/post-processing behavior above. The input is therefore a PnP/BizTV identifier that is converted before use; neither rawstore3 nor globalenum25 should be passed to it by assumption. This API is not needed for the narrow native stage2 change.
+
+## 5. Native scope and verification boundary
+
+The independent interface analysis traced `factory_set_data(194, rawStore)` through `SetFactoryUID` to the selected region's bounds (0..54), then to the single UID194 storage byte. The observed direct native path does not call daemon SetParameter, Local Set UI/PnP callbacks, country vconf updates, `fconfig_db_reset`, or the above dependent-default updates.
+
+The stage2 helper should consequently bind its assertions to what it actually requests: rawstore43 / globalenum65 / `CHI_DTV` changes to rawstore3 / globalenum25 / `AD_SIN2`, while Preventing Import remains0. It should retain pre-write state and verify its own readback, and report that reboot persistence and broader regional behavior are separate observations. A successful one-parameter change is not evidence that the full UI regional-configuration workflow has run.

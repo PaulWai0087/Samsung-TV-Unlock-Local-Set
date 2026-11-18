@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="920" height="252" preserveAspectRatio="xMinYMin meet" viewBox="0 0 920 252" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="920" height="252"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-252)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="920" height="252" rx="16" ry="16" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(96%,97%,98%); fill-rule: evenodd;"/>
+			<text x="24" y="208.6" style="font-family: GuideSC-Bold; font-size: 24px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,417) scale(1,-1)">点击一次“切换新加坡”</text>
+			<rect x="24" y="73" width="269" height="102" rx="10" ry="10" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="41" y="141.0" style="font-family: GuideSC-Bold; font-size: 20px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,282) scale(1,-1)">保存原值</text>
+			<text x="41" y="100.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,201) scale(1,-1)">保留真实备份</text>
+			<path d="M 299,124 L 320,124 Z" style="stroke: rgb(4%,49%,47%); stroke-linecap: butt; stroke-width: 3;"/>
+			<polygon points="320 124, 310 130, 310 118" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(4%,49%,47%); fill-rule: evenodd;"/>
+			<rect x="325" y="73" width="269" height="102" rx="10" ry="10" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="342" y="141.0" style="font-family: GuideSC-Bold; font-size: 20px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,282) scale(1,-1)">按需解锁</text>
+			<text x="342" y="100.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,201) scale(1,-1)">CHI_DTV + 0</text>
+			<path d="M 600,124 L 621,124 Z" style="stroke: rgb(4%,49%,47%); stroke-linecap: butt; stroke-width: 3;"/>
+			<polygon points="621 124, 611 130, 611 118" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(4%,49%,47%); fill-rule: evenodd;"/>
+			<rect x="626" y="73" width="269" height="102" rx="10" ry="10" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="643" y="141.0" style="font-family: GuideSC-Bold; font-size: 20px;fill: rgb(8%,15%,24%); stroke:none;" transform="translate(0,282) scale(1,-1)">设置并回读</text>
+			<text x="643" y="100.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(4%,49%,47%); stroke:none;" transform="translate(0,201) scale(1,-1)">AD_SIN2 + 0</text>
+			<text x="24" y="36.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,73) scale(1,-1)">从已解锁状态开始时，工具继续执行所需步骤。</text>
+			<text x="740.624" y="13.8" style="font-family: GuideSC; font-size: 12px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,27) scale(1,-1)">界面／设备示意 · 非实机截图</text>
+		</g>
+	</g>
+</svg>

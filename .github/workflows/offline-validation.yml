@@ -1,0 +1,52 @@
+name: Offline build and validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows-offline:
+    name: Windows PowerShell 5.1 and pinned helper build
+    runs-on: windows-2022
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: powershell
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: '1'
+      DOTNET_NOLOGO: '1'
+      QN90B_OFFLINE_TESTS_ONLY: '1'
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install the original compiler SDK
+        uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: '6.0.428'
+      - name: Install Python for local echo and pipe fixtures
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+          architecture: 'x64'
+      - name: Verify shipped helper bytes
+        run: .\tools\Verify-Helpers.ps1
+      - name: Build helpers without replacing shipped artifacts
+        run: .\tools\Build-Helpers.ps1 -NoCopy -OutputDirectory (Join-Path $env:RUNNER_TEMP 'qn90b-helper-build')
+      - name: Run the 40 offline PowerShell fixtures
+        run: .\tools\Test-Offline.ps1 -OutputDirectory (Join-Path $env:RUNNER_TEMP 'qn90b-offline-results')
+      - name: Run existing managed state-machine mocks
+        run: |
+          # These projects link Core.cs and VariantReader.cs only; NativeDevice.cs is excluded.
+          dotnet run --project source/stage1/tests/QN90BStage1.Tests.csproj --configuration Release
+          if ($LASTEXITCODE -ne 0) { throw 'Stage1 managed mocks failed.' }
+          dotnet run --project source/stage2/tests/QN90BStage2.Tests.csproj --configuration Release
+          if ($LASTEXITCODE -ne 0) { throw 'Stage2 managed mocks failed.' }
+      - name: Recheck preserved helper artifacts
+        run: .\tools\Verify-Helpers.ps1

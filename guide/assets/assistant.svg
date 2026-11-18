@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="920" height="760" preserveAspectRatio="xMinYMin meet" viewBox="0 0 920 760" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="920" height="760"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-760)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="920" height="760" rx="11" ry="11" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(94%,96%,98%); fill-rule: evenodd;"/>
+			<rect x="0" y="729" width="920" height="31" rx="11" ry="11" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(9%,15%,25%); fill-rule: evenodd;"/>
+			<text x="17" y="740.25" style="font-family: GuideSC-Bold; font-size: 15px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,1480) scale(1,-1)">QN90B 区域助手</text>
+			<text x="882.5" y="738.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,1477) scale(1,-1)">×</text>
+			<text x="28" y="687.2" style="font-family: GuideSC-Bold; font-size: 28px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,1374) scale(1,-1)">QN90B 区域助手</text>
+			<text x="28" y="657.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,1314) scale(1,-1)">仅适用于 QA75QN90BAJXXZ · 75 英寸国行 · 固件 1710</text>
+			<rect x="27" y="510" width="866" height="127" rx="5" ry="5" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="43" y="603.55" style="font-family: GuideSC-Bold; font-size: 17px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,1207) scale(1,-1)">电视 IP</text>
+			<rect x="159" y="594" width="255" height="32" rx="4" ry="4" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="172" y="605.55" style="font-family: GuideSC; font-size: 17px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,1211) scale(1,-1)">192.168.1.100</text>
+			<rect x="428" y="594" width="82" height="32" rx="4" ry="4" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,38%,92%); fill-rule: evenodd;"/>
+			<text x="452.0" y="605.55" style="font-family: GuideSC-Bold; font-size: 17px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,1211) scale(1,-1)">保存</text>
+			<text x="532" y="605.25" style="font-family: GuideSC; font-size: 15px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,1210) scale(1,-1)">电脑与电视需连接同一局域网。</text>
+			<text x="43" y="561.4" style="font-family: GuideSC-Bold; font-size: 16px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,1122) scale(1,-1)">本机局域网 IP</text>
+			<rect x="194" y="551" width="540" height="32" rx="4" ry="4" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="207" y="563.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,1126) scale(1,-1)">192.168.1.10（示例，请填实际地址）</text>
+			<path d="M 712,570 L 718,564 Z" style="stroke: rgb(42%,48%,56%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 718,564 L 724,570 Z" style="stroke: rgb(42%,48%,56%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<text x="43" y="525.25" style="font-family: GuideSC; font-size: 15px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,1050) scale(1,-1)">Host PC IP 请填电脑地址；多网卡时，选择与电视在同一网络的地址。</text>
+			<rect x="27" y="369" width="866" height="125" rx="5" ry="5" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="43" y="464.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,929) scale(1,-1)">当前状态</text>
+			<text x="789.0" y="463.85" style="font-family: GuideSC-Bold; font-size: 19px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,927) scale(1,-1)">尚未检测</text>
+			<text x="43" y="431.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,862) scale(1,-1)">Local Set</text>
+			<text x="628" y="431.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,862) scale(1,-1)">Preventing Import</text>
+			<text x="43" y="402.0" style="font-family: GuideSC-Bold; font-size: 20px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,804) scale(1,-1)">尚未读取</text>
+			<text x="628" y="402.0" style="font-family: GuideSC-Bold; font-size: 20px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,804) scale(1,-1)">—</text>
+			<text x="43" y="377.1" style="font-family: GuideSC; font-size: 14px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,754) scale(1,-1)">备份：检测后显示；已有备份不会覆盖。</text>
+			<rect x="27" y="312" width="427" height="40" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,38%,92%); fill-rule: evenodd;"/>
+			<text x="160.43099999999998" y="325.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(100%,100%,100%); stroke:none;" transform="translate(0,651) scale(1,-1)">检查 / 安装运行环境</text>
+			<rect x="466" y="312" width="427" height="40" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(91%,94%,98%); fill-rule: evenodd;"/>
+			<text x="625.0" y="325.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(14%,38%,92%); stroke:none;" transform="translate(0,651) scale(1,-1)">检测当前状态</text>
+			<rect x="27" y="264" width="427" height="40" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(88%,90%,94%); fill-rule: evenodd;"/>
+			<text x="195.0" y="277.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,555) scale(1,-1)">切换新加坡</text>
+			<rect x="466" y="264" width="427" height="40" rx="5" ry="5" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(88%,90%,94%); fill-rule: evenodd;"/>
+			<text x="625.0" y="277.7" style="font-family: GuideSC-Bold; font-size: 18px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,555) scale(1,-1)">恢复国行参数</text>
+			<text x="28" y="230.55" style="font-family: GuideSC-Bold; font-size: 17px;fill: rgb(9%,15%,25%); stroke:none;" transform="translate(0,461) scale(1,-1)">先准备环境，再检测电视</text>
+			<rect x="27" y="208" width="866" height="7" rx="3" ry="3" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(88%,90%,94%); fill-rule: evenodd;"/>
+			<rect x="27" y="109" width="866" height="86" rx="5" ry="5" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="42" y="166.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,332) scale(1,-1)">打开助手不会连接电视或修改参数。先点击“检查 / 安装运行环境”，</text>
+			<text x="42" y="137.4" style="font-family: GuideSC; font-size: 16px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,274) scale(1,-1)">再点击“检测当前状态”。检测通过后，切换按钮会按状态与原机备份启用。</text>
+			<rect x="27" y="51" width="280" height="37" rx="5" ry="5" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="135.0" y="65.4" style="font-family: GuideSC-Bold; font-size: 16px;fill: rgb(14%,38%,92%); stroke:none;" transform="translate(0,130) scale(1,-1)">导出诊断</text>
+			<rect x="320" y="51" width="280" height="37" rx="5" ry="5" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="412.0" y="65.4" style="font-family: GuideSC-Bold; font-size: 16px;fill: rgb(14%,38%,92%); stroke:none;" transform="translate(0,130) scale(1,-1)">查看图文教程</text>
+			<rect x="613" y="51" width="280" height="37" rx="5" ry="5" style="stroke: rgb(83%,87%,90%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="705.0" y="65.4" style="font-family: GuideSC-Bold; font-size: 16px;fill: rgb(14%,38%,92%); stroke:none;" transform="translate(0,130) scale(1,-1)">打开备份位置</text>
+			<text x="28" y="13.8" style="font-family: GuideSC; font-size: 12px;fill: rgb(42%,48%,56%); stroke:none;" transform="translate(0,27) scale(1,-1)">图中 IP 仅为示例，请填写实际地址。</text>
+			<text x="740.624" y="13.8" style="font-family: GuideSC; font-size: 12px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,27) scale(1,-1)">界面／设备示意 · 非实机截图</text>
+		</g>
+	</g>
+</svg>
